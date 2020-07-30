@@ -22,7 +22,6 @@ public class OrderListPageCommand implements CsetCommand {
 		
 		Map<String, Object> map = model.asMap();
 		HttpServletRequest request = (HttpServletRequest)map.get("request");
-		OrderDAO oDAO = sqlSession.getMapper(OrderDAO.class);
 		
 		String[] chk = request.getParameterValues("chk");  // 체크된 장바구니 번호
 		int total_price = Integer.parseInt(request.getParameter("totalPrice"));

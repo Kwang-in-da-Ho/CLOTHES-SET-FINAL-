@@ -44,19 +44,19 @@
    				<th rowspan="2">
    					<ul>
    						<li>   						
-		   					<span><fmt:formatNumber value="${totalPrice/gradeChangeLimit*100}" pattern="0.00" />%</span>
+		   					<span><fmt:formatNumber value="${totalPurchase/gradeChangeLimit*100}" pattern="0.00" />%</span>
    						</li>
    						<li>   						
-		   					<span>${loginDTO.mGrade }<progress  value="${totalPrice/gradeChangeLimit*100}" max="100"></progress>${nextGrade}</span>
+		   					<span>${loginDTO.mGrade }<progress  value="${totalPurchase/gradeChangeLimit*100}" max="100"></progress>${nextGrade}</span>
    						</li>
    					</ul>
    					
    				</th>
    			</tr>
    			<tr>
-   				<td><span><fmt:formatNumber value="${totalPrice}" pattern="#,##0" /></span></td>
+   				<td><span><fmt:formatNumber value="${totalPurchase}" pattern="#,##0" /></span></td>
    				<td class="mem-grade"><span>${loginDTO.mGrade}</span></td>
-   				<td><span><fmt:formatNumber value="${gradeChangeLimit-totalPrice}" pattern="#,##0" /></span></td>
+   				<td><span><fmt:formatNumber value="${gradeChangeLimit-totalPurchase}" pattern="#,##0" /></span></td>
    			</tr>
    		</table>
    	</div>
@@ -127,8 +127,8 @@
             <tr>
                <td>누적금액</td>
                <td>
-               		<span>${totalPrice}</span>
-               		<input id="totalPrice" type="hidden" name="totalPrice" value="${totalPrice}"readonly />
+               		<span>${totalPurchase}</span>
+               		<input id="totalPurchase" type="hidden" name="totalPurchase" value="${totalPurchase}"readonly />
                </td>               	
             </tr>
             <tr>

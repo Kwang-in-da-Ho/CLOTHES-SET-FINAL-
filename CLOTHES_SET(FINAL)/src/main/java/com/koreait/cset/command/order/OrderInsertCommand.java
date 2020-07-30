@@ -58,7 +58,7 @@ public class OrderInsertCommand implements CsetCommand {
 			int oAmount = Integer.parseInt(oAmountArr[i]);
 			int oPrice = Integer.parseInt(oPriceArr[i]);
 			
-			oDTO.setmNo(mNo);
+			oDTO.setmId(mId);
 			oDTO.setpNo(pNo);
 			oDTO.setoAmount(oAmount);
 			oDTO.setoAddr(oAddr);

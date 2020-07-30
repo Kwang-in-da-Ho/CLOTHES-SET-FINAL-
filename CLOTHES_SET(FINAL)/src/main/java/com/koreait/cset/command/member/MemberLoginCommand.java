@@ -39,23 +39,23 @@ public class MemberLoginCommand implements CsetCommand {
       
       MemberDTO loginDTO =mDAO.selectBymIdmPw(mDTO);
       //총주문금액
-      int totalPrice = oDAO.orderSumMoney(mId);
+      int totalPurchase = oDAO.orderSumMoney(mId);
       int gradeChangeLimit = 100000;
    
          
       
       if(loginDTO != null) { // 검색된 회원이 있으면
-         char abc = loginDTO.getmGrade();
-         String nowGrade =Character.toString(abc);
+    	  
+         char nowGrade = loginDTO.getmGrade();
                
          char nextGrade;
-         if(totalPrice<100000) {
+         if( totalPurchase<100000 || nowGrade == 'D' ) {
             nextGrade ='C';
              gradeChangeLimit = 100000;
-         }else if(totalPrice<400000) {
+         }else if( totalPurchase<400000 || nowGrade == 'C' ) {
             nextGrade ='B';
             gradeChangeLimit = 400000;
-         }else if(totalPrice<700000) {
+         }else if(totalPurchase<700000 || nowGrade == 'B' ) {
             nextGrade ='A';
             gradeChangeLimit = 700000;
          }else {
@@ -63,25 +63,11 @@ public class MemberLoginCommand implements CsetCommand {
             gradeChangeLimit = 1000000;
          }
          
-         if(nowGrade.equals("D")) {
-            nextGrade ='C';
-             gradeChangeLimit = 100000;
-         }else if(nowGrade.equals("C")) {
-            nextGrade ='B';
-             gradeChangeLimit = 400000;
-         }else if(nowGrade.equals("B")) {
-            nextGrade ='A';
-             gradeChangeLimit = 700000;
-         }else if(nowGrade.equals("A")) {
-            nextGrade ='A';
-             gradeChangeLimit = 1000000;
-         }
-         
          
          // ** 세션에 회원정보 올리기 **
          session = request.getSession();
          session.setAttribute("loginDTO", loginDTO); // 로그인에 성공하면 회원정보가 session에 저장.
-         session.setAttribute("totalPrice", totalPrice);
+         session.setAttribute("totalPurchase", totalPurchase);
          session.setAttribute("nextGrade", nextGrade);
          session.setAttribute("gradeChangeLimit", gradeChangeLimit);
       

@@ -7,8 +7,8 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 	
 	<!-- 1. 주문 입력 -->
 	<insert id="orderInsert" parameterType="com.koreait.cset.dto.OrderDTO">
-		INSERT INTO ORDERS (ONO, MNO, PNO, OAMOUNT, ODATE, OADDR, OPHONE, OPAYMENT, ONOTE, OPRICE, OSIZE)
-		VALUES (ORDERS_SEQ.NEXTVAL, #{mNo}, #{pNo}, #{oAmount}, SYSDATE, #{oAddr}, #{oPhone}, 1, #{oNote}, #{oPrice}, #{oSize})
+		INSERT INTO ORDERS (ONO, MID, PNO, OAMOUNT, ODATE, OADDR, OPHONE, OPAYMENT, ONOTE, OPRICE, OSIZE)
+		VALUES (ORDERS_SEQ.NEXTVAL, #{mId}, #{pNo}, #{oAmount}, SYSDATE, #{oAddr}, #{oPhone}, 1, #{oNote}, #{oPrice}, #{oSize})
 	</insert>
 	
 	<!-- 3. 멤버값 가져오기 -->
@@ -18,11 +18,11 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 		WHERE MID = #{mId}
 	</select>
 	
-    <!-- 4. 총 주문 금액 -->
+    <!-- 4. 회원의 총 주문 금액 -->
     <select id="orderSumMoney" resultType="int">
 		SELECT NVL(SUM(O.OPRICE), 0)
 		FROM ORDERS O
-		WHERE O.MNO = ( SELECT M.MNO FROM MEMBERS M WHERE M.MID = #{mId} )
+		WHERE O.MID = #{mId} 
     </select>
     
     <!-- 5-1. 주문 완료 후 회원 포인트 값 변경(포인트 사용) -->

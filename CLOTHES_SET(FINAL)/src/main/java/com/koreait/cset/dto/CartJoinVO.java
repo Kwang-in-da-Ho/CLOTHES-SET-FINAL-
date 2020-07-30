@@ -3,12 +3,12 @@ package com.koreait.cset.dto;
 public class CartJoinVO {
 
 	private int cNo, pNo, cAmount; // 카트 번호, 상품 번호, 장바구니에 담은 상품 수량
-	private String mId, cSize; // 회원 아이디, 사이즈 크기
+	private String mId, cSize; // 회원 아이디, 장바구니에 담은 상품 사이즈
 
 	private String mName; // 회원 이름
 
 	private String pName, pBrand, pFilename; // 상품 이름, 상품 브랜드, 상품 이미지
-	private int pPrice, pDisrate, productPrice, sAmount; // 상품 가격, 상품 자체 할인, 상품 가격, 해당 상품 재고
+	private int pPrice, pDisrate, productPrice, sAmount; // 상품 가격, 상품 할인율, 상품 가격, 해당 상품 재고
 
 	public CartJoinVO() {
 	}
