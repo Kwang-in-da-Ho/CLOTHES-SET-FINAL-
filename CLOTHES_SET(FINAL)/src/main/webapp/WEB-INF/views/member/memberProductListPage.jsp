@@ -55,7 +55,7 @@
    <tbody>
       <c:if test="${empty plist}">
             <tr>
-               <td colspan="10">이미지글이 없습니다.</td>
+               <td colspan="10"><span class="notice">상품이 없습니다.</span></td>
             </tr>
       </c:if>
       <c:if test="${not empty plist}">
@@ -91,7 +91,7 @@
                               $('#resultPrice'+k).text( Math.round( fn_calcPrice( price, disrate ) /100 )*100 );
                               $('#resultPrice'+k).css('color', 'blue').css('font-weight', 'bold');
                               swal({
-                                  title: "가격이변경되었습니다.",
+                                  title: "가격이 변경되었습니다.",
                                   text: "",
                                   icon: "success" //"info,success,warning,error" 중 택1
                               });
@@ -99,7 +99,7 @@
                            },
                            error: function() {
                               swal({
-                                  title: "가격을입력하세요.",
+                                  title: "가격을 입력하세요.",
                                   text: "",
                                   icon: "warning" //"info,success,warning,error" 중 택1
                               });
@@ -130,7 +130,7 @@
                         },   
                         error: function() {
                            swal({
-                               title: "할인율을입력하세요.",
+                               title: "할인율을 입력하세요.",
                                text: "",
                                icon: "warning" //"info,success,warning,error" 중 택1
                            });
@@ -148,7 +148,7 @@
                         <span>${pDTO.pNo}</span>
                         <input type="hidden" id="pNo${k.index}" value="${pDTO.pNo}"/>
                      </td>
-                     <td>${pDTO.pName}</td>                     
+                     <td style="width: 200px"><a href="productsViewPage?pNo=${pDTO.pNo }" class="bold">${pDTO.pName}</a></td>                     
                      <td><img class="product-img small" alt="${pDTO.pFilename}" src="resources/product_photos/${pDTO.pFilename}"></td>
                      
                      <td class="price-change">
@@ -164,7 +164,7 @@
                      <td class="price-change">
                         <span id="disrate${k.index }">${pDTO.pDisrate}%</span>
                         <span><input id="afterDisrate${k.index }" name="afterDisrate" type="text"></span>                        
-                        <span><input id="updateDisrateBtn${k.index}" type="button" value="할인율변경"></span>
+                        <span><input id="updateDisrateBtn${k.index}" type="button" value="할인율 변경"></span>
                      </td>               
                      <td>
                         <fmt:parseNumber var="test" integerOnly="true" value="${pDTO.pPrice*(1-(pDTO.pDisrate*0.01))}"/>

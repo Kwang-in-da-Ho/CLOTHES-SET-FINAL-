@@ -27,8 +27,6 @@ public class BoardListCommand implements CsetCommand {
 		//   전달된 bClass값이 없을 경우 default를 1로 설정 (QNA 게시판으로 ㄱㄱ)
 		String bClassStr = request.getParameter( "bClass" );
 		
-		System.out.println("현재 전달된 bClass : " + bClassStr);
-		
 		if( bClassStr == null || bClassStr.isEmpty()) {
 			bClassStr = "1";
 		}

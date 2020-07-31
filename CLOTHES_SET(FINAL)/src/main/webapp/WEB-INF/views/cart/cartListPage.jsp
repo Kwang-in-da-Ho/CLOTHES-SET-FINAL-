@@ -93,27 +93,29 @@ function fn_cancle(f) {
 	}
 }
 
-function fn_cartAmountChange( i, responseObj, productPrice, operator ) {
+function fn_cartAmountChange( i, newAmount, productPrice, operator ) {
 	
-	console.log(i);
+	// i == cNo (카트 항목 고유 식별자)
+	// newAmount == AJAX를 통해 받아온 수정된 상품 수량
+	// productPrice == 카트에 담긴 상품의 가격 (할인율 적용됨)
+	// sum == 배송비를 제외한 장바구니에 담긴 모든 상품의 가격
+	// totalPrice ==  배송비를 포함한 장바구니에 담긴 모든 상품의 가격
 	
-	// "#,###" 상태의 전체 가격을 가져온다
-	var sumStr = $('#sumMoney').text().split(',');
-	// 쉼표를 기준으로 나눈 후, 쉼표를 빼고 다시 합쳐 숫자로 만든다.
+	// 문자열 상태의 sum("#,##0")을 가져온다
+	var sumArr = $('#sumMoney').text().split(',');
+	// 쉼표를 기준으로 나누어 배열에 저장한 후, 다시 합쳐 숫자로 만든다.
 	var sum = '';
-	sumStr.forEach( function(e) {
-		sum += e;
-	});
+	sumArr.forEach( function(e) { sum += e; });
 	sum = parseInt(sum);
 
-	$('#cAmount'+i).val(responseObj.result);  // 상품 수량 변경	
-	var itemTotalPrice = parseInt( $('#cAmount'+i).val() * productPrice );																
-	$('#cPrice'+i).text(itemTotalPrice.toLocaleString());  // 각 상품 총 가격 변경
+	$('#cAmount'+i).val(newAmount);  // AJAX를 통해 받아온 데이터로 상품 수량 갱신	
+	var itemTotalPrice = parseInt( newAmount * productPrice );																
+	$('#cPrice'+i).text(itemTotalPrice.toLocaleString());  // 장바구니 항목 총 가격 변경
 	
 	// operator에 따라 sum에 가격을 더할지, 뺄지 나뉨
 	sum = (operator == 'add' ? sum + productPrice : sum - productPrice);	
 	
-	// 총 상품 가격
+	// 장바구니에 담긴 모든 상품의 가격
 	$('#sumMoney').text( sum.toLocaleString() );
 	
 	// 총 상품 가격에 따른 배송비
@@ -124,10 +126,8 @@ function fn_cartAmountChange( i, responseObj, productPrice, operator ) {
 	// 배송비를 포함한 총 상품 가격
 	var totalPrice = sum + fee;	
 														
-	$('#totalPrice').val(totalPrice); // 결과 값 */
-	$('#totalPrice + span').text( totalPrice.toLocaleString() ); // 결과 값 */
-	
-	console.log( $('#totalPrice').val() );
+	$('#totalPrice').val(totalPrice);
+	$('#totalPrice + span').text( totalPrice.toLocaleString() ); 
 }
 
 </script>
@@ -230,8 +230,10 @@ function fn_cartAmountChange( i, responseObj, productPrice, operator ) {
 															cAmount : $('#cAmount'+i).val()
 															, cNo : '${cJVO.cNo}'
 															}
-														, success: function( responseObj ) {												
-															fn_cartAmountChange( i, responseObj, productPrice, "add" );
+														, success: function( responseObj ) {
+															// AJAX 통신으로 변경된 수량을 받는다
+															var newAmount = responseObj.result
+															fn_cartAmountChange( i, newAmount, productPrice, "add" );
 														}
 													});
 												});	
@@ -251,7 +253,8 @@ function fn_cartAmountChange( i, responseObj, productPrice, operator ) {
 															, cNo : '${cJVO.cNo}'
 															}
 														, success: function( responseObj ) {
-															fn_cartAmountChange( i, responseObj, productPrice, "subtract" );
+															var newAmount = responseObj.result
+															fn_cartAmountChange( i, newAmount, productPrice, "subtract" );
 														}
 													});
 												});

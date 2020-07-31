@@ -592,7 +592,7 @@ footer p {
 
 .board-content pre {
 	display: inline-block;
-	line-height: 1.4;
+	line-height: 1.8;
 	width: 90%;
 }
 
@@ -623,6 +623,11 @@ footer p {
 	color: slateblue;
 }
 
+
+.faq-content {
+	line-height: 1.8;
+	text-align: center;
+}
 
 /* 3. boardInsertPage, replyInsertPage */
 
@@ -659,8 +664,8 @@ footer p {
 .board-insert-form textarea {
 	width: 650px;
 	height: 300px;
-	line-height: 1.5;
-	padding: 10px;
+	line-height: 1.8;
+	padding: 15px;
 }
 
 .board-insert-btn{

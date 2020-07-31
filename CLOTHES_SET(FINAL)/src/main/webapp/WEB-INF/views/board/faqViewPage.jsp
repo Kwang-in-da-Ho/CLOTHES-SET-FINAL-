@@ -35,7 +35,7 @@
 				</tr>
 				<tr>
 					<td colspan="2">
-						<pre>${bDTO.bContent }</pre>
+						<pre class="faq-content">${bDTO.bContent }</pre>
 						<c:if test="${bDTO.bFilename ne null and bDTO.bFilename ne '' }">
 							<img class="board-img" alt="${bDTO.bFilename}" src="${pageContext.request.contextPath}/resources/boardStorage/${bDTO.bFilename}"/>				
 						</c:if>

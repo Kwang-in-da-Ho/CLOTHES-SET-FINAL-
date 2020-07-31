@@ -477,7 +477,68 @@ INSERT INTO REVIEWS (RNO, PNO, MID, RCONTENT, RFILENAME, RREGDATE, RRATING)
 VALUES (REVIEWS_SEQ.NEXTVAL, 10, 'USER1', '사이즈도 딱 맞고 색도 너무 예뻐요! 다른 색도 사고 싶네여~!!!!!!!', '' ,SYSDATE, 4);
 
 
-/*BOARD INSERT*/
+/******** BOARD INSERT *********/
+-- 1. 공지사항
+INSERT INTO BOARD(BNO, MID, BREGDATE, BTITLE, BCONTENT, BFILENAME, BHIT, BPW, BREF, BSTEP, BDEPTH, BCLASS)
+VALUES(BOARD_SEQ.NEXTVAL, 'ADMIN', SYSDATE, '[07월 신용카드 무이자 행사 안내]', '▶ 기간 : 2020년 07월 1일 ~ 2020년 07월 31일
+▶ 금액 : 5만원 이상
+
+▣ 무이자 안내
+▶ 대상카드사
+
+1. 현대카드: 2, 3, 4, 5, 6, 7개월 무이자
+
+2. 삼성카드: 2, 3, 4, 5, 6개월 무이자
+
+3. 비씨카드: 2, 3, 4, 5, 6개월 무이자
+
+4. NH농협카드: 2, 3, 4, 5, 6개월 무이자
+
+5. 신한카드: 2, 3, 4, 5, 6개월 무이자
+
+6. KB국민카드: 2, 3, 4, 5, 6개월 무이자
+
+7. 하나카드 (하나SK/외환): 2, 3, 4, 5, 6개월 무이자
+
+8. 롯데카드: 2, 3, 4, 5개월 무이자
+
+9. 전북카드 : 2, 3개월 무이자', NULL, 3, '1111', BOARD_SEQ.CURRVAL, 0, 0, 0);
+INSERT INTO BOARD(BNO, MID, BREGDATE, BTITLE, BCONTENT, BFILENAME, BHIT, BPW, BREF, BSTEP, BDEPTH, BCLASS)
+VALUES(BOARD_SEQ.NEXTVAL, 'ADMIN', SYSDATE, '댓글은 마음의 창입니다', '안녕하세요 관리자입니다.
+
+최근 들어 눈살이 찌푸려지게 하는 댓글과 리뷰들이 종종 보이고 있습니다.
+
+저희 Clothes-set은 악풀이나 악성 리뷰들에 대해 강경히 대응 할 것을 알려드립니다.
+
+댓글이나 리뷰를 작성 하시기 전에 내 댓글이 지나치게 공격적이거나 불필요한 비방 및 욕설을 포함하고 있지는 않은지
+
+한 번쯤 생각해보시기 바랍니다.
+
+댓글은 마음의 창입니다. 
+
+저희 Clothes-set을 방문해주시는 고객님들은 패션 감각만큼이나 멋진 마음씨를 가지고 계시리라 믿습니다.
+
+관리자 올림', NULL, 3, '1111', BOARD_SEQ.CURRVAL, 0, 0, 0);
+INSERT INTO BOARD(BNO, MID, BREGDATE, BTITLE, BCONTENT, BFILENAME, BHIT, BPW, BREF, BSTEP, BDEPTH, BCLASS)
+VALUES(BOARD_SEQ.NEXTVAL, 'ADMIN', SYSDATE, '8월 착용샷 이벤트 당첨자 발표', '2020년 5월 착용샷 이벤트 당첨자를 발표합니다
+
+수많은 경쟁자를 뚫고 당첨되신 회원님은 바로...
+
+[황석진]님 입니다!!
+
+아이템들을 너무나 감각있게 소화해 주셨고 사진도 너무나 예쁘게 찍어주셨습니다
+
+앞으로 매달 착용샷 이벤트가 있으니 많은 참여 부탁드립니다
+
+', 'notice001.jpg', 3, '1111', BOARD_SEQ.CURRVAL, 0, 0, 0);
+
+INSERT INTO BOARD(BNO, MID, BREGDATE, BTITLE, BCONTENT, BFILENAME, BHIT, BPW, BREF, BSTEP, BDEPTH, BCLASS)
+VALUES(BOARD_SEQ.NEXTVAL, 'ADMIN', SYSDATE, '대리구매 이용 자제를 당부드립니다.', '대리구매 이용 시 사기 피해가 발생될 수 있으며, 
+
+개인 정보가 노출되어 악용될 수 있습니다.
+
+대리구매로 발생되는 피해는 [Clothes-set]에서 책임지지 않사오니 이용 자제를 당부드립니다.', NULL, 0, '1111', BOARD_SEQ.CURRVAL, 0, 0, 0);
+
 Insert into BOARD (BNO,MID,BREGDATE,BTITLE,BCONTENT,BFILENAME,BHIT,BPW,BREF,BSTEP,BDEPTH,BCLASS) values (BOARD_SEQ.NEXTVAL,'ADMIN',to_date('20/07/17','RR/MM/DD'),'배송 전 환불 관련 안내','- 배송비는 우체국택배 착불 이용시에만 편도1,800원 / 왕복3,600원 해당되며 선불, 타택배이용으로 추가되는금액은 추가입금해주셔야됩니다.
 
 - 무료배송 혜택 받아보신경우 취소 후 구매금액 변동으로 배송비 발생할수있습니다.
@@ -488,8 +549,7 @@ Insert into BOARD (BNO,MID,BREGDATE,BTITLE,BCONTENT,BFILENAME,BHIT,BPW,BREF,BSTE
 
 - 에스크로 결제가아닌 일반실시간계좌이체의경우 부분취소 도와드리고있으며,
 
-　환불 접수된 날로부터 영업일기준 5-7일 이내 환불 금액이 입금됩니다.',null,0,'1111',7,0,0,0);
-Insert into BOARD (BNO,MID,BREGDATE,BTITLE,BCONTENT,BFILENAME,BHIT,BPW,BREF,BSTEP,BDEPTH,BCLASS) values (BOARD_SEQ.NEXTVAL,'ADMIN',to_date('20/07/17','RR/MM/DD'),'현금 영수증 신청 방법',null,'현금영수증_1594963571110.jpg',2,'1111',2,0,0,0);
+　환불 접수된 날로부터 영업일기준 5-7일 이내 환불 금액이 입금됩니다.',null,0,'1111',BOARD_SEQ.CURRVAL,0,0,0);
 Insert into BOARD (BNO,MID,BREGDATE,BTITLE,BCONTENT,BFILENAME,BHIT,BPW,BREF,BSTEP,BDEPTH,BCLASS) values (BOARD_SEQ.NEXTVAL,'ADMIN',to_date('20/07/17','RR/MM/DD'),'개인정보 취급방침',' 
 
 안녕하세요?  CLOTHES-SET입니다.
@@ -513,7 +573,7 @@ CLOTHES-SET는 보다 나은 서비스 제공을 위해 2013년 6 월 11 일 부
      감사합니다. 
 
 
- ',null,0,'1111',8,0,0,0);
+ ',null,0,'1111',BOARD_SEQ.CURRVAL,0,0,0);
 Insert into BOARD (BNO,MID,BREGDATE,BTITLE,BCONTENT,BFILENAME,BHIT,BPW,BREF,BSTEP,BDEPTH,BCLASS) values (BOARD_SEQ.NEXTVAL,'ADMIN',to_date('20/07/17','RR/MM/DD'),'미입금 주문 자동취소기한 단축 안내','고객님들의 상품 주문에 좀 더 확실한 구매결정으로
 
  많은 고객들에게 좀 더 빠르게 상품을 구입 가능 하고자
@@ -541,7 +601,7 @@ Insert into BOARD (BNO,MID,BREGDATE,BTITLE,BCONTENT,BFILENAME,BHIT,BPW,BREF,BSTE
 저희 쇼핑몰을 이용해주셔서 진심으로 감사합니다^^
 
 
- ',null,0,'1111',9,0,0,0);
+ ',null,0,'1111',BOARD_SEQ.CURRVAL,0,0,0);
 Insert into BOARD (BNO,MID,BREGDATE,BTITLE,BCONTENT,BFILENAME,BHIT,BPW,BREF,BSTEP,BDEPTH,BCLASS) values (BOARD_SEQ.NEXTVAL,'ADMIN',to_date('20/07/17','RR/MM/DD'),'고객보상제도','CLOTHES-SET 고객보상제도
 
 상품 품절, 상품 하자, 오배송, 배송 지연 등 예기치 못한 불편을 겪으셨나요?
@@ -552,7 +612,7 @@ Insert into BOARD (BNO,MID,BREGDATE,BTITLE,BCONTENT,BFILENAME,BHIT,BPW,BREF,BSTE
    - 상품 품절 => 500POINT 적립
    - 불량 / 오배송 => 500POINT 적립
    - 입고 지연 ( 5일 이상 ) => 1000POINT적립
-',null,1,'1111',10,0,0,0);
+',null,1,'1111',BOARD_SEQ.CURRVAL,0,0,0);
 Insert into BOARD (BNO,MID,BREGDATE,BTITLE,BCONTENT,BFILENAME,BHIT,BPW,BREF,BSTEP,BDEPTH,BCLASS) values (BOARD_SEQ.NEXTVAL,'ADMIN',to_date('20/07/17','RR/MM/DD'),'이용약관 변경 안내','안녕하세요. CLOTHES-SET입니다.
 항상 저희 쇼핑몰을 이용해주셔서 진심으로 감사드립니다.
 고객님들께 보다 나은 서비스 제공을 위해 CLOTHES-SET ''이용약관''이 2020년 
@@ -572,209 +632,111 @@ Insert into BOARD (BNO,MID,BREGDATE,BTITLE,BCONTENT,BFILENAME,BHIT,BPW,BREF,BSTE
      고객센터 (TEL : 1566 - 0000)
 
 CLOTHES-SET은 앞으로 고객님들께 더 큰 만족을 드리기 위해 최선을 다하겠습니다.
-감사합니다.',null,4,'1111',11,0,0,0);
-Insert into BOARD (BNO,MID,BREGDATE,BTITLE,BCONTENT,BFILENAME,BHIT,BPW,BREF,BSTEP,BDEPTH,BCLASS) values (BOARD_SEQ.NEXTVAL,'USER1',to_date('20/07/17','RR/MM/DD'),'주문을 취소하고 싶어요',null,null,1,'1111',12,0,0,1);
-Insert into BOARD (BNO,MID,BREGDATE,BTITLE,BCONTENT,BFILENAME,BHIT,BPW,BREF,BSTEP,BDEPTH,BCLASS) values (BOARD_SEQ.NEXTVAL,'USER1',to_date('20/07/17','RR/MM/DD'),'환불하고 싶어요','어떻게 환불할 수 있나요?',null,3,'1111',13,0,0,1);
-Insert into BOARD (BNO,MID,BREGDATE,BTITLE,BCONTENT,BFILENAME,BHIT,BPW,BREF,BSTEP,BDEPTH,BCLASS) values (BOARD_SEQ.NEXTVAL,'USER1',to_date('20/07/17','RR/MM/DD'),'반품을 보낼 때 배송비를 동봉하지 않았어요.',' 환불 받을 금액에서 차감이 가능한가요?',null,1,'1111',14,0,0,1);
-Insert into BOARD (BNO,MID,BREGDATE,BTITLE,BCONTENT,BFILENAME,BHIT,BPW,BREF,BSTEP,BDEPTH,BCLASS) values (BOARD_SEQ.NEXTVAL,'USER1',to_date('20/07/17','RR/MM/DD'),'주문 내역을 확인하고 싶어요.',null,null,1,'1111',15,0,0,1);
-Insert into BOARD (BNO,MID,BREGDATE,BTITLE,BCONTENT,BFILENAME,BHIT,BPW,BREF,BSTEP,BDEPTH,BCLASS) values (BOARD_SEQ.NEXTVAL,'USER1',to_date('20/07/17','RR/MM/DD'),'주문 후 옵션, 배송지 변경은 어떻게 하나요?',null,null,1,'1111',16,0,0,1);
-Insert into BOARD (BNO,MID,BREGDATE,BTITLE,BCONTENT,BFILENAME,BHIT,BPW,BREF,BSTEP,BDEPTH,BCLASS) values (BOARD_SEQ.NEXTVAL,'ADMIN',to_date('20/07/17','RR/MM/DD'),'주문 후 옵션, 배송지 변경','상품 및 배송관리는 구매하신 스토어에서 진행 됩니다. 
-구매하신 스토어 고객센터 및 Q&A로 문의하시면 안내 받으실 수 있습니다.',null,0,'1111',16,1,1,1);
-Insert into BOARD (BNO,MID,BREGDATE,BTITLE,BCONTENT,BFILENAME,BHIT,BPW,BREF,BSTEP,BDEPTH,BCLASS) values (BOARD_SEQ.NEXTVAL,'ADMIN',to_date('20/07/17','RR/MM/DD'),'주문 취소','주문은 MY 페이지 메뉴에서 직접 취소 가능 합니다.
+감사합니다.',null,4,'1111',BOARD_SEQ.CURRVAL,0,0,0);
+
+-- Q&A
+
+INSERT INTO BOARD(BNO, MID, BREGDATE, BTITLE, BCONTENT, BFILENAME, BHIT, BPW, BREF, BSTEP, BDEPTH, BCLASS)
+VALUES(BOARD_SEQ.NEXTVAL, 'USER1', SYSDATE, '주문을 취소하고 싶어요', '주문을 취소하고 싶은데 어떻게 하면 되나요?', NULL, 3, '1111', BOARD_SEQ.CURRVAL, 0, 0, 1);
+INSERT INTO BOARD(BNO, MID, BREGDATE, BTITLE, BCONTENT, BFILENAME, BHIT, BPW, BREF, BSTEP, BDEPTH, BCLASS)
+VALUES(BOARD_SEQ.NEXTVAL, 'USER1', SYSDATE, '환불하고 싶어요', '옷이 별로 마음에 안들어요.
+환불은 어떻게 하면 되나요?', NULL, 3, '1111', BOARD_SEQ.CURRVAL, 0, 0, 1);
+INSERT INTO BOARD(BNO, MID, BREGDATE, BTITLE, BCONTENT, BFILENAME, BHIT, BPW, BREF, BSTEP, BDEPTH, BCLASS)
+VALUES(BOARD_SEQ.NEXTVAL, 'USER2', SYSDATE, '반품을 보낼 때 배송비를 동봉하지 않았어요', '환불 받을 금액에서 자동으로 차감되나요?
+아니면 따로 입금을 해야 하나요?', NULL, 3, '1111', BOARD_SEQ.CURRVAL, 0, 0, 1);
+INSERT INTO BOARD(BNO, MID, BREGDATE, BTITLE, BCONTENT, BFILENAME, BHIT, BPW, BREF, BSTEP, BDEPTH, BCLASS)
+VALUES(BOARD_SEQ.NEXTVAL, 'USER2', SYSDATE, '주문 내역을 확인하고 싶어요', '이 사이트가 처음이어서 잘 모르겠네요ㅠㅠ
+알려주시면 감사하겠습니다!', NULL, 3, '1111', BOARD_SEQ.CURRVAL, 0, 0, 1);
+INSERT INTO BOARD(BNO, MID, BREGDATE, BTITLE, BCONTENT, BFILENAME, BHIT, BPW, BREF, BSTEP, BDEPTH, BCLASS)
+VALUES(BOARD_SEQ.NEXTVAL, 'USER3', SYSDATE, '', '', NULL, 3, '1111', BOARD_SEQ.CURRVAL, 0, 0, 1);
+Insert into BOARD (BNO,MID,BREGDATE,BTITLE,BCONTENT,BFILENAME,BHIT,BPW,BREF,BSTEP,BDEPTH,BCLASS) 
+values (BOARD_SEQ.NEXTVAL,'USER2',to_date('20/07/17','RR/MM/DD'),'포인트 내역 확인하고 싶어요',null,null,1,'1111',BOARD_SEQ.CURRVAL,0,0,1);
+Insert into BOARD (BNO,MID,BREGDATE,BTITLE,BCONTENT,BFILENAME,BHIT,BPW,BREF,BSTEP,BDEPTH,BCLASS) 
+values (BOARD_SEQ.NEXTVAL,'USER4',to_date('20/07/17','RR/MM/DD'),'휴대폰 번호가 바뀌었는데 변경할 수 있나요?',null,null,2,'1111',BOARD_SEQ.CURRVAL,0,0,1);
+Insert into BOARD (BNO,MID,BREGDATE,BTITLE,BCONTENT,BFILENAME,BHIT,BPW,BREF,BSTEP,BDEPTH,BCLASS) 
+values (BOARD_SEQ.NEXTVAL,'USER5',to_date('20/07/17','RR/MM/DD'),'리뷰작성은 어디서 하나요?',null,null,1,'1111',BOARD_SEQ.CURRVAL,0,0,1);
+Insert into BOARD (BNO,MID,BREGDATE,BTITLE,BCONTENT,BFILENAME,BHIT,BPW,BREF,BSTEP,BDEPTH,BCLASS) 
+values (BOARD_SEQ.NEXTVAL,'USER6',to_date('20/07/17','RR/MM/DD'),'회원가입은 어떻게 하나요?',null,null,2,'1111',BOARD_SEQ.CURRVAL,0,0,1);
+Insert into BOARD (BNO,MID,BREGDATE,BTITLE,BCONTENT,BFILENAME,BHIT,BPW,BREF,BSTEP,BDEPTH,BCLASS) 
+values (BOARD_SEQ.NEXTVAL,'USER2',to_date('20/07/17','RR/MM/DD'),'로그인이 안돼요',null,null,1,'1111',BOARD_SEQ.CURRVAL,0,0,1);
+INSERT INTO BOARD(BNO, MID, BREGDATE, BTITLE, BCONTENT, BFILENAME, BHIT, BPW, BREF, BSTEP, BDEPTH, BCLASS)
+VALUES(BOARD_SEQ.NEXTVAL, 'USER3', SYSDATE, '상품 상태가 이상해요', '옷이 여기저기 탈색되었고 마감도 좀 이상해요
+품질 관리에 신경좀 써주세요 기분이 정말 나쁘네요
+보상은 어떻게 받으면 돼요?', 'board002.jpg', 3, '1111', BOARD_SEQ.CURRVAL, 0, 0, 1);
+Insert into BOARD (BNO,MID,BREGDATE,BTITLE,BCONTENT,BFILENAME,BHIT,BPW,BREF,BSTEP,BDEPTH,BCLASS) 
+values (BOARD_SEQ.NEXTVAL,'USER8',to_date('20/07/17','RR/MM/DD'),'주문 내역을 확인하고 싶어요.','이전에 주문했던 상품이 너무 마음에 들어서 다시 주문하려 합니다
+혹시 어디서 과거 주문 이력을 확인할 수 있나요?' ,null,1,'1111',BOARD_SEQ.CURRVAL,0,0,1);
+Insert into BOARD (BNO,MID,BREGDATE,BTITLE,BCONTENT,BFILENAME,BHIT,BPW,BREF,BSTEP,BDEPTH,BCLASS) 
+values (BOARD_SEQ.NEXTVAL,'USER7',to_date('20/07/17','RR/MM/DD'),'주문 후 옵션, 배송지 변경은 어떻게 하나요?',null,null,1,'1111',BOARD_SEQ.CURRVAL,0,0,1);
+Insert into BOARD (BNO,MID,BREGDATE,BTITLE,BCONTENT,BFILENAME,BHIT,BPW,BREF,BSTEP,BDEPTH,BCLASS) 
+values (BOARD_SEQ.NEXTVAL,'USER9',to_date('20/07/17','RR/MM/DD'),'포인트 내역 확인하고 싶어요',null,null,1,'1111',BOARD_SEQ.CURRVAL,0,0,1);
+Insert into BOARD (BNO,MID,BREGDATE,BTITLE,BCONTENT,BFILENAME,BHIT,BPW,BREF,BSTEP,BDEPTH,BCLASS) 
+values (BOARD_SEQ.NEXTVAL,'USER2',to_date('20/07/17','RR/MM/DD'),'휴대폰 번호가 바뀌었는데 변경할 수 있나요?',null,null,2,'1111',BOARD_SEQ.CURRVAL,0,0,1);
+Insert into BOARD (BNO,MID,BREGDATE,BTITLE,BCONTENT,BFILENAME,BHIT,BPW,BREF,BSTEP,BDEPTH,BCLASS) 
+values (BOARD_SEQ.NEXTVAL,'USER3',to_date('20/07/17','RR/MM/DD'),'리뷰작성은 어디서 하나요?',null,null,1,'1111',BOARD_SEQ.CURRVAL,0,0,1);
+Insert into BOARD (BNO,MID,BREGDATE,BTITLE,BCONTENT,BFILENAME,BHIT,BPW,BREF,BSTEP,BDEPTH,BCLASS) 
+values (BOARD_SEQ.NEXTVAL,'USER4',to_date('20/07/17','RR/MM/DD'),'회원가입은 어떻게 하나요?',null,null,2,'1111',BOARD_SEQ.CURRVAL,0,0,1);
+Insert into BOARD (BNO,MID,BREGDATE,BTITLE,BCONTENT,BFILENAME,BHIT,BPW,BREF,BSTEP,BDEPTH,BCLASS) 
+values (BOARD_SEQ.NEXTVAL,'USER3',to_date('20/07/17','RR/MM/DD'),'로그인이 안돼요',null,null,1,'1111',BOARD_SEQ.CURRVAL,0,0,1);
+
+INSERT INTO BOARD(BNO, MID, BREGDATE, BTITLE, BCONTENT, BFILENAME, BHIT, BPW, BREF, BSTEP, BDEPTH, BCLASS)
+VALUES(BOARD_SEQ.NEXTVAL,'ADMIN', SYSDATE, '주문 취소 관련 안내 드립니다', '주문은 MY 페이지 메뉴에서 직접 취소 가능 합니다.
 
 - 결제대기/결제완료/상품준비중 : 주문/배송조회에서 고객님께서 직접 주문취소 가능
 
-- 배송준비중 : 판매자 배송 준비 기간으로 3영업일(주말 제외) 간 주문취소가 되지 않으며, 만약 3영업일 이내 주문 취소를 원하실 경우
-판매자에게 Q&A/카톡/전화로 직접 주문취소 요청 하시어 가능 여부를 확인해 주셔야 합니다.',null,0,'1111',12,1,1,1);
-Insert into BOARD (BNO,MID,BREGDATE,BTITLE,BCONTENT,BFILENAME,BHIT,BPW,BREF,BSTEP,BDEPTH,BCLASS) values (BOARD_SEQ.NEXTVAL,'ADMIN',to_date('20/07/17','RR/MM/DD'),'환불/교환','교환/반품 모두 내의 [환불요청] 버튼을 클릭 후 진행 가능하십니다.
+- 배송준비중 : 판매자 배송 준비 기간으로 3영업일(주말 제외) 간 주문취소가 되지 않으며, 
+   만약 3영업일 이내 주문 취소를 원하실 경우
+판매자에게 Q&A/카톡/전화로 직접 주문취소 요청 하시어 가능 여부를 확인해 주셔야 합니다.', NULL, 1,'1111', 10, 1,	1,	1);
+
+INSERT INTO BOARD(BNO, MID, BREGDATE, BTITLE, BCONTENT, BFILENAME, BHIT, BPW, BREF, BSTEP, BDEPTH, BCLASS)
+VALUES(BOARD_SEQ.NEXTVAL,'ADMIN', SYSDATE,'환불 관련 안내 드립니다', '"교환/반품 모두 내의 [환불요청] 버튼을 클릭 후 진행 가능하십니다.
 
 - 교환의 경우 환불요청 버튼을 눌러 주신 뒤 교환 처리가 완료된 후 환불요청 취소 해 주시면 됩니다.
 환불/교환 요청 접수 시 택배 회수 시스템을 제공되지 않으며 각 스토어마다 환불 및 교환의 규정에 차이가 있을 수 있으므로
 구매하셨던 판매자 고객센터로 직접 관련 문의 해 주셔야 확인 가능한 점 참고 부탁드립니다.
 혹, 판매자 고객센터와 연결이 어려우신 경우
 주문/배송조회 ▶ 상품사진클릭 ▶ 상세페이지 ▶ Q&A 게시글 작성 해 주시면
-영업일 기준 24시간 이내 답변 받아 보실 수 있습니다.',null,0,'1111',13,1,1,1);
-Insert into BOARD (BNO,MID,BREGDATE,BTITLE,BCONTENT,BFILENAME,BHIT,BPW,BREF,BSTEP,BDEPTH,BCLASS) values (BOARD_SEQ.NEXTVAL,'ADMIN',to_date('20/07/17','RR/MM/DD'),'배송비 관련 환불','안타깝지만 배송비 차감 환불은 어렵습니다.
-번거로우시더라도 판매자분께 택배비 입금 또는 상품 발송시 동봉 등의 방법을 협의 부탁 드립니다',null,0,'1111',14,1,1,1);
-Insert into BOARD (BNO,MID,BREGDATE,BTITLE,BCONTENT,BFILENAME,BHIT,BPW,BREF,BSTEP,BDEPTH,BCLASS) values (BOARD_SEQ.NEXTVAL,'ADMIN',to_date('20/07/17','RR/MM/DD'),'주문 내역 확인','로그인 후 MY페이지 ▷ 주문/배송조회에서 확인 가능합니다.
+영업일 기준 24시간 이내 답변 받아 보실 수 있습니다."', NULL,1, '1111',  11  ,1, 1, 1);
 
-',null,0,'1111',15,1,1,1);
-Insert into BOARD (BNO,MID,BREGDATE,BTITLE,BCONTENT,BFILENAME,BHIT,BPW,BREF,BSTEP,BDEPTH,BCLASS) values (BOARD_SEQ.NEXTVAL,'USER2',to_date('20/07/17','RR/MM/DD'),'포인트 내역 확인하고 싶어요',null,null,1,'1111',22,0,0,1);
-Insert into BOARD (BNO,MID,BREGDATE,BTITLE,BCONTENT,BFILENAME,BHIT,BPW,BREF,BSTEP,BDEPTH,BCLASS) values (BOARD_SEQ.NEXTVAL,'USER2',to_date('20/07/17','RR/MM/DD'),'휴대폰 번호가 바뀌었는데 변경할 수 있나요?',null,null,2,'1111',23,0,0,1);
-Insert into BOARD (BNO,MID,BREGDATE,BTITLE,BCONTENT,BFILENAME,BHIT,BPW,BREF,BSTEP,BDEPTH,BCLASS) values (BOARD_SEQ.NEXTVAL,'USER2',to_date('20/07/17','RR/MM/DD'),'리뷰작성은 어디서 하나요?',null,null,1,'1111',24,0,0,1);
-Insert into BOARD (BNO,MID,BREGDATE,BTITLE,BCONTENT,BFILENAME,BHIT,BPW,BREF,BSTEP,BDEPTH,BCLASS) values (BOARD_SEQ.NEXTVAL,'USER2',to_date('20/07/17','RR/MM/DD'),'회원가입은 어떻게 하나요?',null,null,2,'1111',25,0,0,1);
-Insert into BOARD (BNO,MID,BREGDATE,BTITLE,BCONTENT,BFILENAME,BHIT,BPW,BREF,BSTEP,BDEPTH,BCLASS) values (BOARD_SEQ.NEXTVAL,'USER2',to_date('20/07/17','RR/MM/DD'),'로그인이 안돼요',null,null,1,'1111',26,0,0,1);
-Insert into BOARD (BNO,MID,BREGDATE,BTITLE,BCONTENT,BFILENAME,BHIT,BPW,BREF,BSTEP,BDEPTH,BCLASS) values (BOARD_SEQ.NEXTVAL,'ADMIN',to_date('20/07/17','RR/MM/DD'),'포인트 내역 확인','로그인 후 MY페이지 ▶ 포인트 클릭하시면 확인 가능합니다.',null,0,'1111',22,1,1,1);
-Insert into BOARD (BNO,MID,BREGDATE,BTITLE,BCONTENT,BFILENAME,BHIT,BPW,BREF,BSTEP,BDEPTH,BCLASS) values (BOARD_SEQ.NEXTVAL,'ADMIN',to_date('20/07/17','RR/MM/DD'),'휴대폰 번호 변경','본인인증을 새롭게 하시면 변경이 가능합니다!
-현재 로그인 되어 있으시다면 로그아웃 후 ''비밀번호찾기''를 눌러주세요.
+INSERT INTO BOARD(BNO, MID, BREGDATE, BTITLE, BCONTENT, BFILENAME, BHIT, BPW, BREF, BSTEP, BDEPTH, BCLASS)
+VALUES(BOARD_SEQ.NEXTVAL,'ADMIN', SYSDATE,'포인트 내역 확인 안내 드립니다', '"안녕하세요 고객님
 
-본인명의 휴대폰 번호로 인증 ▷ ''인증받는 정보로 내 인증 정보 수정'' 체크하시어
-인증 해 주시면 휴대폰 번호 변경이 가능합니다.
+언제나 저희 [Clothes-Set]을 이용해주셔서 감사합니다
 
-또한 고객님의 소중한 개인 정보 보호를 위해
-휴대폰 번호 변경 즉시 개인 정보를 변경해 주시기 바랍니다.',null,0,'1111',23,1,1,1);
-Insert into BOARD (BNO,MID,BREGDATE,BTITLE,BCONTENT,BFILENAME,BHIT,BPW,BREF,BSTEP,BDEPTH,BCLASS) values (BOARD_SEQ.NEXTVAL,'ADMIN',to_date('20/07/17','RR/MM/DD'),'리뷰 작성','상품 수령 후 구매 확정한 주문건에 대해 후기를 작성할 수 있습니다.
-- MY페이지 ▶ 주문/배송조회 ▶ 리뷰쓰기 에서 작성이 가능합니다.
-',null,0,'1111',24,1,1,1);
-Insert into BOARD (BNO,MID,BREGDATE,BTITLE,BCONTENT,BFILENAME,BHIT,BPW,BREF,BSTEP,BDEPTH,BCLASS) values (BOARD_SEQ.NEXTVAL,'ADMIN',to_date('20/07/17','RR/MM/DD'),'로그인','1. ID/PW 를 분실하신 경우 (이메일 가입자)
-ID/PW 찾기를 통하여, 본인인증 진행 후 임시 비밀번호를 발급 받으실 수 있습니다. 단, 해당 사항이 확인 어려우신 경우,
-CLOTHES-SET 고객센터로 문의 부탁드립니다.
+회원님의 포인트 내역은 우측 상단의 [마이페이지]에 들어가시면 확인하실 수 있습니다
 
-',null,0,'1111',26,1,1,1);
+감사합니다"', NULL, 1, '1111', 23,1, 1, 1 );
 
-Insert into BOARD (BNO,MID,BREGDATE,BTITLE,BCONTENT,BFILENAME,BHIT,BPW,BREF,BSTEP,BDEPTH,BCLASS) values (BOARD_SEQ.NEXTVAL,'ADMIN',to_date('20/07/17','RR/MM/DD'),'배송 전 환불 관련 안내','- 배송비는 우체국택배 착불 이용시에만 편도1,800원 / 왕복3,600원 해당되며 선불, 타택배이용으로 추가되는금액은 추가입금해주셔야됩니다.
+INSERT INTO BOARD(BNO, MID, BREGDATE, BTITLE, BCONTENT, BFILENAME, BHIT, BPW, BREF, BSTEP, BDEPTH, BCLASS)
+VALUES(BOARD_SEQ.NEXTVAL,'ADMIN', SYSDATE,'주문내역 확인 안내 드립니다', '"안녕하세요 고객님
 
-- 무료배송 혜택 받아보신경우 취소 후 구매금액 변동으로 배송비 발생할수있습니다.
+언제나 저희 [Clothes-Set]을 이용해주셔서 감사합니다
 
-- 입금후 3층게시판으로 입금문의주셔야 확인가능합니다.
+회원님의 주문내역은 우측 상단의 [마이페이지] 우선 클릭하시고
 
-- 불량&오배송&입고지연&품절의경우 수수료 차감없이처리됩니다.
+[마이페이지]에서 좌측 상단의 [주문 내역 확인] 링크에 접속하시면 확인하실 수 있습니다
 
-- 에스크로 결제가아닌 일반실시간계좌이체의경우 부분취소 도와드리고있으며,
+감사합니다"', NULL, 1, '1111', 13,1, 1, 1 );
 
-　환불 접수된 날로부터 영업일기준 5-7일 이내 환불 금액이 입금됩니다.',null,0,'1111',7,0,0,0);
-Insert into BOARD (BNO,MID,BREGDATE,BTITLE,BCONTENT,BFILENAME,BHIT,BPW,BREF,BSTEP,BDEPTH,BCLASS) values (BOARD_SEQ.NEXTVAL,'ADMIN',to_date('20/07/17','RR/MM/DD'),'현금 영수증 신청 방법',null,'현금영수증_1594963571110.jpg',2,'1111',2,0,0,0);
-Insert into BOARD (BNO,MID,BREGDATE,BTITLE,BCONTENT,BFILENAME,BHIT,BPW,BREF,BSTEP,BDEPTH,BCLASS) values (BOARD_SEQ.NEXTVAL,'ADMIN',to_date('20/07/17','RR/MM/DD'),'개인정보 취급방침',' 
+INSERT INTO BOARD(BNO, MID, BREGDATE, BTITLE, BCONTENT, BFILENAME, BHIT, BPW, BREF, BSTEP, BDEPTH, BCLASS)
+VALUES(BOARD_SEQ.NEXTVAL,'ADMIN', SYSDATE,'상품 이상 관련', '"안녕하세요 고객님
 
-안녕하세요?  CLOTHES-SET입니다.
-CLOTHES-SET는 보다 나은 서비스 제공을 위해 2013년 6 월 11 일 부터 개인정보 취급방침이 아래와 같이 개정됩니다.
+언제나 저희 [Clothes-Set]을 이용해주셔서 감사합니다
+
+무엇보다 먼저 고객님의 기분을 상하게 해드린 점 진심으로 사과드립니다.
+
+우선 admin@clothesset.com으로 제품 상태가 자세히 보이는 사진과 업체명을 보내주시면
+
+즉시 업체에 알려 교환해드리도록 하겠습니다
+
+배송비는 업체에서 부담할 것입니다
+
+다시한 번 죄송하다는 말씀 드립니다
+
+감사합니다"', NULL, 1, '1111', 20,1, 1, 1 );
 
 
-      1. 주요 개정사항 : 개인정보 취급위탁 업체 변경
-
-      2. 변경내용 ( 개인정보취급방침 전문보기)
-
-      * 수탁업체 : SIIC Inc / Simplex Sientific Technology Co., Ltd.      * 위탁업무 : 고객상담업무
-
-      3. 개정시기 2013년 6 월 11 일
-
-      4. 관련문의  고객센터 ( Tel : 1688-1360 /  E-mail :moonkyungmin@itsc.com)
-
-
-     CLOTHES-SET은 고객의 개인정보를 소중히 취급하고 있으며, 보다 안전하게 보호할 것을 약속 드립 
-  니다.
-
-     감사합니다. 
-
-
- ',null,0,'1111',8,0,0,0);
-Insert into BOARD (BNO,MID,BREGDATE,BTITLE,BCONTENT,BFILENAME,BHIT,BPW,BREF,BSTEP,BDEPTH,BCLASS) values (BOARD_SEQ.NEXTVAL,'ADMIN',to_date('20/07/17','RR/MM/DD'),'미입금 주문 자동취소기한 단축 안내','고객님들의 상품 주문에 좀 더 확실한 구매결정으로
-
- 많은 고객들에게 좀 더 빠르게 상품을 구입 가능 하고자
-
- 미입금 주문 자동취소가
-
- 기존 10일에서 -> 5일 로 변경되어 진행될 예정입니다.
-
-
- 이에 따라 주문 후 반드시 5일 이내에 입금을 해주셔야 주문이 유효합니다.
-
-
-주문시 기재하신 결제정보
-
-[입금자명 / 결제금액 / 은행] 등 동일한 정보로
-
-입금이 해주셔야 빠르게 상품 준비가 시작될 수 있습니다.
-
-
-(단, 상품이 조기 품절될 수 있으니 상품의 품절여부를 확인해주세요.)
-
-
-더 예쁘고 새로운 신상들로 고객만족을 위해 최선을 다하겠습니다.
-
-저희 쇼핑몰을 이용해주셔서 진심으로 감사합니다^^
-
-
- ',null,0,'1111',9,0,0,0);
-Insert into BOARD (BNO,MID,BREGDATE,BTITLE,BCONTENT,BFILENAME,BHIT,BPW,BREF,BSTEP,BDEPTH,BCLASS) values (BOARD_SEQ.NEXTVAL,'ADMIN',to_date('20/07/17','RR/MM/DD'),'고객보상제도','CLOTHES-SET 고객보상제도
-
-상품 품절, 상품 하자, 오배송, 배송 지연 등 예기치 못한 불편을 겪으셨나요?
-고객님들의 불편을 최소화하기 위해 고객보상제도를 마련했습니다.
-
-개별 문자 발송으로 입고지연 안내드리는 경우,
-따로 적립금이 지급되지 않는 점 양해 부탁드려요~!
-   - 상품 품절 => 500POINT 적립
-   - 불량 / 오배송 => 500POINT 적립
-   - 입고 지연 ( 5일 이상 ) => 1000POINT적립
-',null,1,'1111',10,0,0,0);
-Insert into BOARD (BNO,MID,BREGDATE,BTITLE,BCONTENT,BFILENAME,BHIT,BPW,BREF,BSTEP,BDEPTH,BCLASS) values (BOARD_SEQ.NEXTVAL,'ADMIN',to_date('20/07/17','RR/MM/DD'),'이용약관 변경 안내','안녕하세요. CLOTHES-SET입니다.
-항상 저희 쇼핑몰을 이용해주셔서 진심으로 감사드립니다.
-고객님들꼐 보다 나은 서비스 제공을 위해 CLOTHES-SET ''이용약관''이 2020년 
-7월 17일부터 아래요 같이 개정됩니다.
-
-   - 개정사항
-     공정거래위원회 전자상거래업체 표준약관을 준용한 조항추가 및 일부 모호한 문구 수정 등
-   	
-   - 변경 내용
-	▶ 변경된 이용약관 전문 보기
-	▶ (구) 이용약관 전문 보기
-
-   - 개정 시기
-     2020년 7월 17일부터 효력 발생
-
-   - 관련문의 
-     고객센터 (TEL : 1566 - 0000)
-
-CLOTHES-SET은 앞으로 고객님들께 더 큰 만족을 드리기 위해 최선을 다하겠습니다.
-감사합니다.',null,4,'1111',11,0,0,0);
-Insert into BOARD (BNO,MID,BREGDATE,BTITLE,BCONTENT,BFILENAME,BHIT,BPW,BREF,BSTEP,BDEPTH,BCLASS) values (BOARD_SEQ.NEXTVAL,'USER1',to_date('20/07/17','RR/MM/DD'),'주문을 취소하고 싶어요',null,null,1,'1111',12,0,0,1);
-Insert into BOARD (BNO,MID,BREGDATE,BTITLE,BCONTENT,BFILENAME,BHIT,BPW,BREF,BSTEP,BDEPTH,BCLASS) values (BOARD_SEQ.NEXTVAL,'USER1',to_date('20/07/17','RR/MM/DD'),'환불하고 싶어요','어떻게 환불할 수 있나요?',null,3,'1111',13,0,0,1);
-Insert into BOARD (BNO,MID,BREGDATE,BTITLE,BCONTENT,BFILENAME,BHIT,BPW,BREF,BSTEP,BDEPTH,BCLASS) values (BOARD_SEQ.NEXTVAL,'USER1',to_date('20/07/17','RR/MM/DD'),'반품을 보낼 때 배송비를 동봉하지 않았어요.',' 환불 받을 금액에서 차감이 가능한가요?',null,1,'1111',14,0,0,1);
-Insert into BOARD (BNO,MID,BREGDATE,BTITLE,BCONTENT,BFILENAME,BHIT,BPW,BREF,BSTEP,BDEPTH,BCLASS) values (BOARD_SEQ.NEXTVAL,'USER1',to_date('20/07/17','RR/MM/DD'),'주문 내역을 확인하고 싶어요.','이전에 주문했던 상품이 너무 마음에 들어서 다시 주문하려 합니다
-혹시 어디서 과거 주문 이력을 확인할 수 있나요?' ,null,1,'1111',15,0,0,1);
-Insert into BOARD (BNO,MID,BREGDATE,BTITLE,BCONTENT,BFILENAME,BHIT,BPW,BREF,BSTEP,BDEPTH,BCLASS) values (BOARD_SEQ.NEXTVAL,'USER1',to_date('20/07/17','RR/MM/DD'),'주문 후 옵션, 배송지 변경은 어떻게 하나요?',null,null,1,'1111',16,0,0,1);
-Insert into BOARD (BNO,MID,BREGDATE,BTITLE,BCONTENT,BFILENAME,BHIT,BPW,BREF,BSTEP,BDEPTH,BCLASS) values (BOARD_SEQ.NEXTVAL,'ADMIN',to_date('20/07/17','RR/MM/DD'),'주문 후 옵션, 배송지 변경','상품 및 배송관리는 구매하신 스토어에서 진행 됩니다. 구매하신 스토어 고객센터 및 Q&A로 문의하시면 안내 받으실 수 있습니다.',null,0,'1111',16,1,1,1);
-Insert into BOARD (BNO,MID,BREGDATE,BTITLE,BCONTENT,BFILENAME,BHIT,BPW,BREF,BSTEP,BDEPTH,BCLASS) values (BOARD_SEQ.NEXTVAL,'ADMIN',to_date('20/07/17','RR/MM/DD'),'주문 취소','주문은 MY 페이지 메뉴에서 직접 취소 가능 합니다.
-
-- 결제대기/결제완료/상품준비중 : 주문/배송조회에서 고객님께서 직접 주문취소 가능
-
-- 배송준비중 : 판매자 배송 준비 기간으로 3영업일(주말 제외) 간 주문취소가 되지 않으며, 만약 3영업일 이내 주문 취소를 원하실 경우
-판매자에게 Q&A/카톡/전화로 직접 주문취소 요청 하시어 가능 여부를 확인해 주셔야 합니다.',null,0,'1111',12,1,1,1);
-Insert into BOARD (BNO,MID,BREGDATE,BTITLE,BCONTENT,BFILENAME,BHIT,BPW,BREF,BSTEP,BDEPTH,BCLASS) values (BOARD_SEQ.NEXTVAL,'ADMIN',to_date('20/07/17','RR/MM/DD'),'환불/교환','교환/반품 모두 내의 [환불요청] 버튼을 클릭 후 진행 가능하십니다.
-
-- 교환의 경우 환불요청 버튼을 눌러 주신 뒤 교환 처리가 완료된 후 환불요청 취소 해 주시면 됩니다.
-환불/교환 요청 접수 시 택배 회수 시스템을 제공되지 않으며 각 스토어마다 환불 및 교환의 규정에 차이가 있을 수 있으므로
-구매하셨던 판매자 고객센터로 직접 관련 문의 해 주셔야 확인 가능한 점 참고 부탁드립니다.
-혹, 판매자 고객센터와 연결이 어려우신 경우
-주문/배송조회 ▶ 상품사진클릭 ▶ 상세페이지 ▶ Q&A 게시글 작성 해 주시면
-영업일 기준 24시간 이내 답변 받아 보실 수 있습니다.',null,0,'1111',13,1,1,1);
-Insert into BOARD (BNO,MID,BREGDATE,BTITLE,BCONTENT,BFILENAME,BHIT,BPW,BREF,BSTEP,BDEPTH,BCLASS) values (BOARD_SEQ.NEXTVAL,'ADMIN',to_date('20/07/17','RR/MM/DD'),'배송비 관련 환불','안타깝지만 배송비 차감 환불은 어렵습니다.
-번거로우시더라도 판매자분께 택배비 입금 또는 상품 발송시 동봉 등의 방법을 협의 부탁 드립니다',null,0,'1111',14,1,1,1);
-Insert into BOARD (BNO,MID,BREGDATE,BTITLE,BCONTENT,BFILENAME,BHIT,BPW,BREF,BSTEP,BDEPTH,BCLASS) values (BOARD_SEQ.NEXTVAL,'ADMIN',to_date('20/07/17','RR/MM/DD'),'주문 내역 확인','로그인 후 MY페이지 ▷ 주문/배송조회에서 확인 가능합니다.
-
-',null,0,'1111',15,1,1,1);
-Insert into BOARD (BNO,MID,BREGDATE,BTITLE,BCONTENT,BFILENAME,BHIT,BPW,BREF,BSTEP,BDEPTH,BCLASS) values (BOARD_SEQ.NEXTVAL,'USER2',to_date('20/07/17','RR/MM/DD'),'포인트 내역 확인하고 싶어요',null,null,1,'1111',22,0,0,1);
-Insert into BOARD (BNO,MID,BREGDATE,BTITLE,BCONTENT,BFILENAME,BHIT,BPW,BREF,BSTEP,BDEPTH,BCLASS) values (BOARD_SEQ.NEXTVAL,'USER2',to_date('20/07/17','RR/MM/DD'),'휴대폰 번호가 바뀌었는데 변경할 수 있나요?',null,null,2,'1111',23,0,0,1);
-Insert into BOARD (BNO,MID,BREGDATE,BTITLE,BCONTENT,BFILENAME,BHIT,BPW,BREF,BSTEP,BDEPTH,BCLASS) values (BOARD_SEQ.NEXTVAL,'USER2',to_date('20/07/17','RR/MM/DD'),'리뷰작성은 어디서 하나요?',null,null,1,'1111',24,0,0,1);
-Insert into BOARD (BNO,MID,BREGDATE,BTITLE,BCONTENT,BFILENAME,BHIT,BPW,BREF,BSTEP,BDEPTH,BCLASS) values (BOARD_SEQ.NEXTVAL,'USER2',to_date('20/07/17','RR/MM/DD'),'회원가입은 어떻게 하나요?',null,null,2,'1111',25,0,0,1);
-Insert into BOARD (BNO,MID,BREGDATE,BTITLE,BCONTENT,BFILENAME,BHIT,BPW,BREF,BSTEP,BDEPTH,BCLASS) values (BOARD_SEQ.NEXTVAL,'USER2',to_date('20/07/17','RR/MM/DD'),'로그인이 안돼요',null,null,1,'1111',26,0,0,1);
-Insert into BOARD (BNO,MID,BREGDATE,BTITLE,BCONTENT,BFILENAME,BHIT,BPW,BREF,BSTEP,BDEPTH,BCLASS) values (BOARD_SEQ.NEXTVAL,'ADMIN',to_date('20/07/17','RR/MM/DD'),'포인트 내역 확인','로그인 후 MY페이지 ▶ 포인트 클릭하시면 확인 가능합니다.','board001.jpg',0,'1111',22,1,1,1);
-Insert into BOARD (BNO,MID,BREGDATE,BTITLE,BCONTENT,BFILENAME,BHIT,BPW,BREF,BSTEP,BDEPTH,BCLASS) values (BOARD_SEQ.NEXTVAL,'ADMIN',to_date('20/07/17','RR/MM/DD'),'휴대폰 번호 변경','본인인증을 새롭게 하시면 변경이 가능합니다!
-현재 로그인 되어 있으시다면 로그아웃 후 ''비밀번호찾기''를 눌러주세요.
-
-본인명의 휴대폰 번호로 인증 ▷ ''인증받는 정보로 내 인증 정보 수정'' 체크하시어
-인증 해 주시면 휴대폰 번호 변경이 가능합니다.
-
-또한 고객님의 소중한 개인 정보 보호를 위해
-휴대폰 번호 변경 즉시 개인 정보를 변경해 주시기 바랍니다.',null,0,'1111',23,1,1,1);
-Insert into BOARD (BNO,MID,BREGDATE,BTITLE,BCONTENT,BFILENAME,BHIT,BPW,BREF,BSTEP,BDEPTH,BCLASS) values (BOARD_SEQ.NEXTVAL,'ADMIN',to_date('20/07/17','RR/MM/DD'),'리뷰 작성','상품 수령 후 구매 확정한 주문건에 대해 후기를 작성할 수 있습니다.
-- MY페이지 ▶ 주문/배송조회 ▶ 리뷰쓰기 에서 작성이 가능합니다.
-',null,0,'1111',24,1,1,1);
-Insert into BOARD (BNO,MID,BREGDATE,BTITLE,BCONTENT,BFILENAME,BHIT,BPW,BREF,BSTEP,BDEPTH,BCLASS) values (BOARD_SEQ.NEXTVAL,'ADMIN',to_date('20/07/17','RR/MM/DD'),'로그인','1. ID/PW 를 분실하신 경우 (이메일 가입자)
-ID/PW 찾기를 통하여, 본인인증 진행 후 임시 비밀번호를 발급 받으실 수 있습니다. 단, 해당 사항이 확인 어려우신 경우,
-CLOTHES-SET 고객센터로 문의 부탁드립니다.
-
-',null,0,'1111',26,1,1,1);
-
-Insert into BOARD (BNO,MID,BREGDATE,BTITLE,BCONTENT,BFILENAME,BHIT,BPW,BREF,BSTEP,BDEPTH,BCLASS) values (BOARD_SEQ.NEXTVAL,'USER1',to_date('20/07/17','RR/MM/DD'),'옷 마감 처리가 이상해요','그저께 배송받고 확인해봤는데 마감 상태가 불량합니다
-이런 부분에 대해서 어떻게 보상을 받을 수 있나요?','board002.jpg',1,'1111',BOARD_SEQ.CURRVAL,0,0,1);
-
-Insert into BOARD (BNO,MID,BREGDATE,BTITLE,BCONTENT,BFILENAME,BHIT,BPW,BREF,BSTEP,BDEPTH,BCLASS) values (BOARD_SEQ.NEXTVAL,'USER2',to_date('20/07/17','RR/MM/DD'),'혹시 이 옷 다시 안들어오나요?','몇달 전쯤에 이 쇼핑몰에서 봤던 상품인데
-당시엔 돈이 부족해서 구매 안하고 찜해놨었는데 오랜만에 다시 돌아오니 사라져있네요ㅠㅠ
-꼭 다시 들어왔으면 좋겠습니다!!','board003.jpg',1,'1111',BOARD_SEQ.CURRVAL,0,0,1);
-
-
- 
+/******** STOCK INSERT *********/
 INSERT INTO STOCK VALUES(STOCK_SEQ.NEXTVAL,1,'S',30);
 INSERT INTO STOCK VALUES(STOCK_SEQ.NEXTVAL,1,'M',30);
 INSERT INTO STOCK VALUES(STOCK_SEQ.NEXTVAL,1,'L',30);
@@ -1285,5 +1247,349 @@ INSERT INTO STOCK VALUES(STOCK_SEQ.NEXTVAL,169,'L',30);
 INSERT INTO STOCK VALUES(STOCK_SEQ.NEXTVAL,170,'S',30);
 INSERT INTO STOCK VALUES(STOCK_SEQ.NEXTVAL,170,'M',30);
 INSERT INTO STOCK VALUES(STOCK_SEQ.NEXTVAL,170,'L',30);
+
+
+/******** REVIEWS INSERT *********/
+INSERT INTO REVIEWS VALUES(REVIEWS_SEQ.NEXTVAL, 1, 'USER6', '꽤나 비싸게 샀다고 생각하는데.. 배송 늦는 건 말할것도 없고 옷도 한가운데가 찢어져서 왔어요', 'null', SYSDATE, 1);
+INSERT INTO REVIEWS VALUES(REVIEWS_SEQ.NEXTVAL, 1, 'USER2', '상당히 괜찮은 제품입니다. 다만 실제 색감이 사진과 달라요', 'review3.jpg', SYSDATE, 4);
+INSERT INTO REVIEWS VALUES(REVIEWS_SEQ.NEXTVAL, 2, 'USER6', '이 가격을 주고 살만한 제품은 아니라 생각해요... 너무 비쌈', 'review1.jpg', SYSDATE, 2);
+INSERT INTO REVIEWS VALUES(REVIEWS_SEQ.NEXTVAL, 2, 'USER8', '상당히 괜찮은 제품입니다. 다만 실제 색감이 사진과 달라요', 'review3.jpg', SYSDATE, 4);
+INSERT INTO REVIEWS VALUES(REVIEWS_SEQ.NEXTVAL, 3, 'USER5', '이 가격을 주고 살만한 제품은 아니라 생각해요... 너무 비쌈', 'review1.jpg', SYSDATE, 2);
+INSERT INTO REVIEWS VALUES(REVIEWS_SEQ.NEXTVAL, 3, 'USER3', '이 가격에 이 옷을 사다니! 너무 좋아요! 옷감, 가격, 핏 모두 만족해요. 배송도 빨랐어요!', 'review4.jpg', SYSDATE, 5);
+INSERT INTO REVIEWS VALUES(REVIEWS_SEQ.NEXTVAL, 4, 'USER6', '이 가격에 이 옷을 사다니! 너무 좋아요! 옷감, 가격, 핏 모두 만족해요. 배송도 빨랐어요!', 'review4.jpg', SYSDATE, 5);
+INSERT INTO REVIEWS VALUES(REVIEWS_SEQ.NEXTVAL, 4, 'USER10', '이 가격을 주고 살만한 제품은 아니라 생각해요... 너무 비쌈', 'review1.jpg', SYSDATE, 2);
+INSERT INTO REVIEWS VALUES(REVIEWS_SEQ.NEXTVAL, 5, 'USER3', '꽤나 비싸게 샀다고 생각하는데.. 배송 늦는 건 말할것도 없고 옷도 한가운데가 찢어져서 왔어요', 'null', SYSDATE, 1);
+INSERT INTO REVIEWS VALUES(REVIEWS_SEQ.NEXTVAL, 5, 'USER9', '이 가격을 주고 살만한 제품은 아니라 생각해요... 너무 비쌈', 'review1.jpg', SYSDATE, 2);
+INSERT INTO REVIEWS VALUES(REVIEWS_SEQ.NEXTVAL, 6, 'USER8', '그저 그런 옷입니다. 비싼데 생각보다 옷감도 그닥인거 같고.. 잘 모르겠네요', 'review2.jpg', SYSDATE, 3);
+INSERT INTO REVIEWS VALUES(REVIEWS_SEQ.NEXTVAL, 6, 'USER1', '그저 그런 옷입니다. 비싼데 생각보다 옷감도 그닥인거 같고.. 잘 모르겠네요', 'review2.jpg', SYSDATE, 3);
+INSERT INTO REVIEWS VALUES(REVIEWS_SEQ.NEXTVAL, 7, 'USER1', '이 가격을 주고 살만한 제품은 아니라 생각해요... 너무 비쌈', 'review1.jpg', SYSDATE, 2);
+INSERT INTO REVIEWS VALUES(REVIEWS_SEQ.NEXTVAL, 7, 'USER8', '꽤나 비싸게 샀다고 생각하는데.. 배송 늦는 건 말할것도 없고 옷도 한가운데가 찢어져서 왔어요', 'null', SYSDATE, 1);
+INSERT INTO REVIEWS VALUES(REVIEWS_SEQ.NEXTVAL, 8, 'USER2', '꽤나 비싸게 샀다고 생각하는데.. 배송 늦는 건 말할것도 없고 옷도 한가운데가 찢어져서 왔어요', 'null', SYSDATE, 1);
+INSERT INTO REVIEWS VALUES(REVIEWS_SEQ.NEXTVAL, 8, 'USER10', '꽤나 비싸게 샀다고 생각하는데.. 배송 늦는 건 말할것도 없고 옷도 한가운데가 찢어져서 왔어요', 'null', SYSDATE, 1);
+INSERT INTO REVIEWS VALUES(REVIEWS_SEQ.NEXTVAL, 9, 'USER10', '그저 그런 옷입니다. 비싼데 생각보다 옷감도 그닥인거 같고.. 잘 모르겠네요', 'review2.jpg', SYSDATE, 3);
+INSERT INTO REVIEWS VALUES(REVIEWS_SEQ.NEXTVAL, 9, 'USER9', '이 가격을 주고 살만한 제품은 아니라 생각해요... 너무 비쌈', 'review1.jpg', SYSDATE, 2);
+INSERT INTO REVIEWS VALUES(REVIEWS_SEQ.NEXTVAL, 10, 'USER2', '꽤나 비싸게 샀다고 생각하는데.. 배송 늦는 건 말할것도 없고 옷도 한가운데가 찢어져서 왔어요', 'null', SYSDATE, 1);
+INSERT INTO REVIEWS VALUES(REVIEWS_SEQ.NEXTVAL, 10, 'USER3', '이 가격을 주고 살만한 제품은 아니라 생각해요... 너무 비쌈', 'review1.jpg', SYSDATE, 2);
+INSERT INTO REVIEWS VALUES(REVIEWS_SEQ.NEXTVAL, 11, 'USER3', '이 가격을 주고 살만한 제품은 아니라 생각해요... 너무 비쌈', 'review1.jpg', SYSDATE, 2);
+INSERT INTO REVIEWS VALUES(REVIEWS_SEQ.NEXTVAL, 11, 'USER9', '그저 그런 옷입니다. 비싼데 생각보다 옷감도 그닥인거 같고.. 잘 모르겠네요', 'review2.jpg', SYSDATE, 3);
+INSERT INTO REVIEWS VALUES(REVIEWS_SEQ.NEXTVAL, 12, 'USER3', '그저 그런 옷입니다. 비싼데 생각보다 옷감도 그닥인거 같고.. 잘 모르겠네요', 'review2.jpg', SYSDATE, 3);
+INSERT INTO REVIEWS VALUES(REVIEWS_SEQ.NEXTVAL, 12, 'USER7', '그저 그런 옷입니다. 비싼데 생각보다 옷감도 그닥인거 같고.. 잘 모르겠네요', 'review2.jpg', SYSDATE, 3);
+INSERT INTO REVIEWS VALUES(REVIEWS_SEQ.NEXTVAL, 13, 'USER7', '상당히 괜찮은 제품입니다. 다만 실제 색감이 사진과 달라요', 'review3.jpg', SYSDATE, 4);
+INSERT INTO REVIEWS VALUES(REVIEWS_SEQ.NEXTVAL, 13, 'USER10', '상당히 괜찮은 제품입니다. 다만 실제 색감이 사진과 달라요', 'review3.jpg', SYSDATE, 4);
+INSERT INTO REVIEWS VALUES(REVIEWS_SEQ.NEXTVAL, 14, 'USER5', '이 가격에 이 옷을 사다니! 너무 좋아요! 옷감, 가격, 핏 모두 만족해요. 배송도 빨랐어요!', 'review4.jpg', SYSDATE, 5);
+INSERT INTO REVIEWS VALUES(REVIEWS_SEQ.NEXTVAL, 14, 'USER3', '이 가격에 이 옷을 사다니! 너무 좋아요! 옷감, 가격, 핏 모두 만족해요. 배송도 빨랐어요!', 'review4.jpg', SYSDATE, 5);
+INSERT INTO REVIEWS VALUES(REVIEWS_SEQ.NEXTVAL, 15, 'USER4', '이 가격을 주고 살만한 제품은 아니라 생각해요... 너무 비쌈', 'review1.jpg', SYSDATE, 2);
+INSERT INTO REVIEWS VALUES(REVIEWS_SEQ.NEXTVAL, 15, 'USER10', '그저 그런 옷입니다. 비싼데 생각보다 옷감도 그닥인거 같고.. 잘 모르겠네요', 'review2.jpg', SYSDATE, 3);
+INSERT INTO REVIEWS VALUES(REVIEWS_SEQ.NEXTVAL, 16, 'USER2', '꽤나 비싸게 샀다고 생각하는데.. 배송 늦는 건 말할것도 없고 옷도 한가운데가 찢어져서 왔어요', 'null', SYSDATE, 1);
+INSERT INTO REVIEWS VALUES(REVIEWS_SEQ.NEXTVAL, 16, 'USER2', '상당히 괜찮은 제품입니다. 다만 실제 색감이 사진과 달라요', 'review3.jpg', SYSDATE, 4);
+INSERT INTO REVIEWS VALUES(REVIEWS_SEQ.NEXTVAL, 17, 'USER3', '이 가격을 주고 살만한 제품은 아니라 생각해요... 너무 비쌈', 'review1.jpg', SYSDATE, 2);
+INSERT INTO REVIEWS VALUES(REVIEWS_SEQ.NEXTVAL, 17, 'USER7', '이 가격을 주고 살만한 제품은 아니라 생각해요... 너무 비쌈', 'review1.jpg', SYSDATE, 2);
+INSERT INTO REVIEWS VALUES(REVIEWS_SEQ.NEXTVAL, 18, 'USER3', '이 가격에 이 옷을 사다니! 너무 좋아요! 옷감, 가격, 핏 모두 만족해요. 배송도 빨랐어요!', 'review4.jpg', SYSDATE, 5);
+INSERT INTO REVIEWS VALUES(REVIEWS_SEQ.NEXTVAL, 18, 'USER4', '꽤나 비싸게 샀다고 생각하는데.. 배송 늦는 건 말할것도 없고 옷도 한가운데가 찢어져서 왔어요', 'null', SYSDATE, 1);
+INSERT INTO REVIEWS VALUES(REVIEWS_SEQ.NEXTVAL, 19, 'USER4', '이 가격을 주고 살만한 제품은 아니라 생각해요... 너무 비쌈', 'review1.jpg', SYSDATE, 2);
+INSERT INTO REVIEWS VALUES(REVIEWS_SEQ.NEXTVAL, 19, 'USER3', '이 가격에 이 옷을 사다니! 너무 좋아요! 옷감, 가격, 핏 모두 만족해요. 배송도 빨랐어요!', 'review4.jpg', SYSDATE, 5);
+INSERT INTO REVIEWS VALUES(REVIEWS_SEQ.NEXTVAL, 20, 'USER6', '그저 그런 옷입니다. 비싼데 생각보다 옷감도 그닥인거 같고.. 잘 모르겠네요', 'review2.jpg', SYSDATE, 3);
+INSERT INTO REVIEWS VALUES(REVIEWS_SEQ.NEXTVAL, 20, 'USER6', '상당히 괜찮은 제품입니다. 다만 실제 색감이 사진과 달라요', 'review3.jpg', SYSDATE, 4);
+INSERT INTO REVIEWS VALUES(REVIEWS_SEQ.NEXTVAL, 21, 'USER5', '그저 그런 옷입니다. 비싼데 생각보다 옷감도 그닥인거 같고.. 잘 모르겠네요', 'review2.jpg', SYSDATE, 3);
+INSERT INTO REVIEWS VALUES(REVIEWS_SEQ.NEXTVAL, 21, 'USER10', '이 가격을 주고 살만한 제품은 아니라 생각해요... 너무 비쌈', 'review1.jpg', SYSDATE, 2);
+INSERT INTO REVIEWS VALUES(REVIEWS_SEQ.NEXTVAL, 22, 'USER1', '상당히 괜찮은 제품입니다. 다만 실제 색감이 사진과 달라요', 'review3.jpg', SYSDATE, 4);
+INSERT INTO REVIEWS VALUES(REVIEWS_SEQ.NEXTVAL, 22, 'USER4', '이 가격에 이 옷을 사다니! 너무 좋아요! 옷감, 가격, 핏 모두 만족해요. 배송도 빨랐어요!', 'review4.jpg', SYSDATE, 5);
+INSERT INTO REVIEWS VALUES(REVIEWS_SEQ.NEXTVAL, 23, 'USER4', '이 가격을 주고 살만한 제품은 아니라 생각해요... 너무 비쌈', 'review1.jpg', SYSDATE, 2);
+INSERT INTO REVIEWS VALUES(REVIEWS_SEQ.NEXTVAL, 23, 'USER1', '이 가격에 이 옷을 사다니! 너무 좋아요! 옷감, 가격, 핏 모두 만족해요. 배송도 빨랐어요!', 'review4.jpg', SYSDATE, 5);
+INSERT INTO REVIEWS VALUES(REVIEWS_SEQ.NEXTVAL, 24, 'USER2', '상당히 괜찮은 제품입니다. 다만 실제 색감이 사진과 달라요', 'review3.jpg', SYSDATE, 4);
+INSERT INTO REVIEWS VALUES(REVIEWS_SEQ.NEXTVAL, 24, 'USER4', '이 가격을 주고 살만한 제품은 아니라 생각해요... 너무 비쌈', 'review1.jpg', SYSDATE, 2);
+INSERT INTO REVIEWS VALUES(REVIEWS_SEQ.NEXTVAL, 25, 'USER7', '상당히 괜찮은 제품입니다. 다만 실제 색감이 사진과 달라요', 'review3.jpg', SYSDATE, 4);
+INSERT INTO REVIEWS VALUES(REVIEWS_SEQ.NEXTVAL, 25, 'USER4', '그저 그런 옷입니다. 비싼데 생각보다 옷감도 그닥인거 같고.. 잘 모르겠네요', 'review2.jpg', SYSDATE, 3);
+INSERT INTO REVIEWS VALUES(REVIEWS_SEQ.NEXTVAL, 26, 'USER3', '이 가격을 주고 살만한 제품은 아니라 생각해요... 너무 비쌈', 'review1.jpg', SYSDATE, 2);
+INSERT INTO REVIEWS VALUES(REVIEWS_SEQ.NEXTVAL, 26, 'USER10', '이 가격에 이 옷을 사다니! 너무 좋아요! 옷감, 가격, 핏 모두 만족해요. 배송도 빨랐어요!', 'review4.jpg', SYSDATE, 5);
+INSERT INTO REVIEWS VALUES(REVIEWS_SEQ.NEXTVAL, 27, 'USER3', '그저 그런 옷입니다. 비싼데 생각보다 옷감도 그닥인거 같고.. 잘 모르겠네요', 'review2.jpg', SYSDATE, 3);
+INSERT INTO REVIEWS VALUES(REVIEWS_SEQ.NEXTVAL, 27, 'USER1', '상당히 괜찮은 제품입니다. 다만 실제 색감이 사진과 달라요', 'review3.jpg', SYSDATE, 4);
+INSERT INTO REVIEWS VALUES(REVIEWS_SEQ.NEXTVAL, 28, 'USER5', '상당히 괜찮은 제품입니다. 다만 실제 색감이 사진과 달라요', 'review3.jpg', SYSDATE, 4);
+INSERT INTO REVIEWS VALUES(REVIEWS_SEQ.NEXTVAL, 28, 'USER5', '이 가격을 주고 살만한 제품은 아니라 생각해요... 너무 비쌈', 'review1.jpg', SYSDATE, 2);
+INSERT INTO REVIEWS VALUES(REVIEWS_SEQ.NEXTVAL, 29, 'USER8', '꽤나 비싸게 샀다고 생각하는데.. 배송 늦는 건 말할것도 없고 옷도 한가운데가 찢어져서 왔어요', 'null', SYSDATE, 1);
+INSERT INTO REVIEWS VALUES(REVIEWS_SEQ.NEXTVAL, 29, 'USER4', '이 가격을 주고 살만한 제품은 아니라 생각해요... 너무 비쌈', 'review1.jpg', SYSDATE, 2);
+INSERT INTO REVIEWS VALUES(REVIEWS_SEQ.NEXTVAL, 30, 'USER4', '꽤나 비싸게 샀다고 생각하는데.. 배송 늦는 건 말할것도 없고 옷도 한가운데가 찢어져서 왔어요', 'null', SYSDATE, 1);
+INSERT INTO REVIEWS VALUES(REVIEWS_SEQ.NEXTVAL, 30, 'USER2', '이 가격을 주고 살만한 제품은 아니라 생각해요... 너무 비쌈', 'review1.jpg', SYSDATE, 2);
+INSERT INTO REVIEWS VALUES(REVIEWS_SEQ.NEXTVAL, 31, 'USER4', '상당히 괜찮은 제품입니다. 다만 실제 색감이 사진과 달라요', 'review3.jpg', SYSDATE, 4);
+INSERT INTO REVIEWS VALUES(REVIEWS_SEQ.NEXTVAL, 31, 'USER9', '이 가격을 주고 살만한 제품은 아니라 생각해요... 너무 비쌈', 'review1.jpg', SYSDATE, 2);
+INSERT INTO REVIEWS VALUES(REVIEWS_SEQ.NEXTVAL, 32, 'USER9', '이 가격을 주고 살만한 제품은 아니라 생각해요... 너무 비쌈', 'review1.jpg', SYSDATE, 2);
+INSERT INTO REVIEWS VALUES(REVIEWS_SEQ.NEXTVAL, 32, 'USER2', '그저 그런 옷입니다. 비싼데 생각보다 옷감도 그닥인거 같고.. 잘 모르겠네요', 'review2.jpg', SYSDATE, 3);
+INSERT INTO REVIEWS VALUES(REVIEWS_SEQ.NEXTVAL, 33, 'USER6', '이 가격을 주고 살만한 제품은 아니라 생각해요... 너무 비쌈', 'review1.jpg', SYSDATE, 2);
+INSERT INTO REVIEWS VALUES(REVIEWS_SEQ.NEXTVAL, 33, 'USER5', '그저 그런 옷입니다. 비싼데 생각보다 옷감도 그닥인거 같고.. 잘 모르겠네요', 'review2.jpg', SYSDATE, 3);
+INSERT INTO REVIEWS VALUES(REVIEWS_SEQ.NEXTVAL, 34, 'USER2', '이 가격에 이 옷을 사다니! 너무 좋아요! 옷감, 가격, 핏 모두 만족해요. 배송도 빨랐어요!', 'review4.jpg', SYSDATE, 5);
+INSERT INTO REVIEWS VALUES(REVIEWS_SEQ.NEXTVAL, 34, 'USER9', '이 가격에 이 옷을 사다니! 너무 좋아요! 옷감, 가격, 핏 모두 만족해요. 배송도 빨랐어요!', 'review4.jpg', SYSDATE, 5);
+INSERT INTO REVIEWS VALUES(REVIEWS_SEQ.NEXTVAL, 35, 'USER6', '상당히 괜찮은 제품입니다. 다만 실제 색감이 사진과 달라요', 'review3.jpg', SYSDATE, 4);
+INSERT INTO REVIEWS VALUES(REVIEWS_SEQ.NEXTVAL, 35, 'USER4', '이 가격에 이 옷을 사다니! 너무 좋아요! 옷감, 가격, 핏 모두 만족해요. 배송도 빨랐어요!', 'review4.jpg', SYSDATE, 5);
+INSERT INTO REVIEWS VALUES(REVIEWS_SEQ.NEXTVAL, 36, 'USER4', '상당히 괜찮은 제품입니다. 다만 실제 색감이 사진과 달라요', 'review3.jpg', SYSDATE, 4);
+INSERT INTO REVIEWS VALUES(REVIEWS_SEQ.NEXTVAL, 36, 'USER8', '이 가격에 이 옷을 사다니! 너무 좋아요! 옷감, 가격, 핏 모두 만족해요. 배송도 빨랐어요!', 'review4.jpg', SYSDATE, 5);
+INSERT INTO REVIEWS VALUES(REVIEWS_SEQ.NEXTVAL, 37, 'USER9', '꽤나 비싸게 샀다고 생각하는데.. 배송 늦는 건 말할것도 없고 옷도 한가운데가 찢어져서 왔어요', 'null', SYSDATE, 1);
+INSERT INTO REVIEWS VALUES(REVIEWS_SEQ.NEXTVAL, 37, 'USER7', '꽤나 비싸게 샀다고 생각하는데.. 배송 늦는 건 말할것도 없고 옷도 한가운데가 찢어져서 왔어요', 'null', SYSDATE, 1);
+INSERT INTO REVIEWS VALUES(REVIEWS_SEQ.NEXTVAL, 38, 'USER9', '그저 그런 옷입니다. 비싼데 생각보다 옷감도 그닥인거 같고.. 잘 모르겠네요', 'review2.jpg', SYSDATE, 3);
+INSERT INTO REVIEWS VALUES(REVIEWS_SEQ.NEXTVAL, 38, 'USER4', '상당히 괜찮은 제품입니다. 다만 실제 색감이 사진과 달라요', 'review3.jpg', SYSDATE, 4);
+INSERT INTO REVIEWS VALUES(REVIEWS_SEQ.NEXTVAL, 39, 'USER3', '꽤나 비싸게 샀다고 생각하는데.. 배송 늦는 건 말할것도 없고 옷도 한가운데가 찢어져서 왔어요', 'null', SYSDATE, 1);
+INSERT INTO REVIEWS VALUES(REVIEWS_SEQ.NEXTVAL, 39, 'USER4', '꽤나 비싸게 샀다고 생각하는데.. 배송 늦는 건 말할것도 없고 옷도 한가운데가 찢어져서 왔어요', 'null', SYSDATE, 1);
+INSERT INTO REVIEWS VALUES(REVIEWS_SEQ.NEXTVAL, 40, 'USER6', '이 가격에 이 옷을 사다니! 너무 좋아요! 옷감, 가격, 핏 모두 만족해요. 배송도 빨랐어요!', 'review4.jpg', SYSDATE, 5);
+INSERT INTO REVIEWS VALUES(REVIEWS_SEQ.NEXTVAL, 40, 'USER10', '이 가격을 주고 살만한 제품은 아니라 생각해요... 너무 비쌈', 'review1.jpg', SYSDATE, 2);
+INSERT INTO REVIEWS VALUES(REVIEWS_SEQ.NEXTVAL, 41, 'USER5', '그저 그런 옷입니다. 비싼데 생각보다 옷감도 그닥인거 같고.. 잘 모르겠네요', 'review2.jpg', SYSDATE, 3);
+INSERT INTO REVIEWS VALUES(REVIEWS_SEQ.NEXTVAL, 41, 'USER4', '꽤나 비싸게 샀다고 생각하는데.. 배송 늦는 건 말할것도 없고 옷도 한가운데가 찢어져서 왔어요', 'null', SYSDATE, 1);
+INSERT INTO REVIEWS VALUES(REVIEWS_SEQ.NEXTVAL, 42, 'USER6', '상당히 괜찮은 제품입니다. 다만 실제 색감이 사진과 달라요', 'review3.jpg', SYSDATE, 4);
+INSERT INTO REVIEWS VALUES(REVIEWS_SEQ.NEXTVAL, 42, 'USER3', '이 가격에 이 옷을 사다니! 너무 좋아요! 옷감, 가격, 핏 모두 만족해요. 배송도 빨랐어요!', 'review4.jpg', SYSDATE, 5);
+INSERT INTO REVIEWS VALUES(REVIEWS_SEQ.NEXTVAL, 43, 'USER9', '이 가격에 이 옷을 사다니! 너무 좋아요! 옷감, 가격, 핏 모두 만족해요. 배송도 빨랐어요!', 'review4.jpg', SYSDATE, 5);
+INSERT INTO REVIEWS VALUES(REVIEWS_SEQ.NEXTVAL, 43, 'USER3', '꽤나 비싸게 샀다고 생각하는데.. 배송 늦는 건 말할것도 없고 옷도 한가운데가 찢어져서 왔어요', 'null', SYSDATE, 1);
+INSERT INTO REVIEWS VALUES(REVIEWS_SEQ.NEXTVAL, 44, 'USER3', '상당히 괜찮은 제품입니다. 다만 실제 색감이 사진과 달라요', 'review3.jpg', SYSDATE, 4);
+INSERT INTO REVIEWS VALUES(REVIEWS_SEQ.NEXTVAL, 44, 'USER6', '꽤나 비싸게 샀다고 생각하는데.. 배송 늦는 건 말할것도 없고 옷도 한가운데가 찢어져서 왔어요', 'null', SYSDATE, 1);
+INSERT INTO REVIEWS VALUES(REVIEWS_SEQ.NEXTVAL, 45, 'USER10', '꽤나 비싸게 샀다고 생각하는데.. 배송 늦는 건 말할것도 없고 옷도 한가운데가 찢어져서 왔어요', 'null', SYSDATE, 1);
+INSERT INTO REVIEWS VALUES(REVIEWS_SEQ.NEXTVAL, 45, 'USER3', '이 가격을 주고 살만한 제품은 아니라 생각해요... 너무 비쌈', 'review1.jpg', SYSDATE, 2);
+INSERT INTO REVIEWS VALUES(REVIEWS_SEQ.NEXTVAL, 46, 'USER4', '상당히 괜찮은 제품입니다. 다만 실제 색감이 사진과 달라요', 'review3.jpg', SYSDATE, 4);
+INSERT INTO REVIEWS VALUES(REVIEWS_SEQ.NEXTVAL, 46, 'USER3', '꽤나 비싸게 샀다고 생각하는데.. 배송 늦는 건 말할것도 없고 옷도 한가운데가 찢어져서 왔어요', 'null', SYSDATE, 1);
+INSERT INTO REVIEWS VALUES(REVIEWS_SEQ.NEXTVAL, 47, 'USER4', '상당히 괜찮은 제품입니다. 다만 실제 색감이 사진과 달라요', 'review3.jpg', SYSDATE, 4);
+INSERT INTO REVIEWS VALUES(REVIEWS_SEQ.NEXTVAL, 47, 'USER8', '이 가격을 주고 살만한 제품은 아니라 생각해요... 너무 비쌈', 'review1.jpg', SYSDATE, 2);
+INSERT INTO REVIEWS VALUES(REVIEWS_SEQ.NEXTVAL, 48, 'USER7', '이 가격에 이 옷을 사다니! 너무 좋아요! 옷감, 가격, 핏 모두 만족해요. 배송도 빨랐어요!', 'review4.jpg', SYSDATE, 5);
+INSERT INTO REVIEWS VALUES(REVIEWS_SEQ.NEXTVAL, 48, 'USER2', '꽤나 비싸게 샀다고 생각하는데.. 배송 늦는 건 말할것도 없고 옷도 한가운데가 찢어져서 왔어요', 'null', SYSDATE, 1);
+INSERT INTO REVIEWS VALUES(REVIEWS_SEQ.NEXTVAL, 49, 'USER4', '그저 그런 옷입니다. 비싼데 생각보다 옷감도 그닥인거 같고.. 잘 모르겠네요', 'review2.jpg', SYSDATE, 3);
+INSERT INTO REVIEWS VALUES(REVIEWS_SEQ.NEXTVAL, 49, 'USER3', '상당히 괜찮은 제품입니다. 다만 실제 색감이 사진과 달라요', 'review3.jpg', SYSDATE, 4);
+INSERT INTO REVIEWS VALUES(REVIEWS_SEQ.NEXTVAL, 50, 'USER4', '이 가격을 주고 살만한 제품은 아니라 생각해요... 너무 비쌈', 'review1.jpg', SYSDATE, 2);
+INSERT INTO REVIEWS VALUES(REVIEWS_SEQ.NEXTVAL, 50, 'USER7', '상당히 괜찮은 제품입니다. 다만 실제 색감이 사진과 달라요', 'review3.jpg', SYSDATE, 4);
+INSERT INTO REVIEWS VALUES(REVIEWS_SEQ.NEXTVAL, 51, 'USER10', '꽤나 비싸게 샀다고 생각하는데.. 배송 늦는 건 말할것도 없고 옷도 한가운데가 찢어져서 왔어요', 'null', SYSDATE, 1);
+INSERT INTO REVIEWS VALUES(REVIEWS_SEQ.NEXTVAL, 51, 'USER2', '상당히 괜찮은 제품입니다. 다만 실제 색감이 사진과 달라요', 'review3.jpg', SYSDATE, 4);
+INSERT INTO REVIEWS VALUES(REVIEWS_SEQ.NEXTVAL, 52, 'USER6', '상당히 괜찮은 제품입니다. 다만 실제 색감이 사진과 달라요', 'review3.jpg', SYSDATE, 4);
+INSERT INTO REVIEWS VALUES(REVIEWS_SEQ.NEXTVAL, 52, 'USER4', '이 가격에 이 옷을 사다니! 너무 좋아요! 옷감, 가격, 핏 모두 만족해요. 배송도 빨랐어요!', 'review4.jpg', SYSDATE, 5);
+INSERT INTO REVIEWS VALUES(REVIEWS_SEQ.NEXTVAL, 53, 'USER2', '상당히 괜찮은 제품입니다. 다만 실제 색감이 사진과 달라요', 'review3.jpg', SYSDATE, 4);
+INSERT INTO REVIEWS VALUES(REVIEWS_SEQ.NEXTVAL, 53, 'USER7', '상당히 괜찮은 제품입니다. 다만 실제 색감이 사진과 달라요', 'review3.jpg', SYSDATE, 4);
+INSERT INTO REVIEWS VALUES(REVIEWS_SEQ.NEXTVAL, 54, 'USER6', '상당히 괜찮은 제품입니다. 다만 실제 색감이 사진과 달라요', 'review3.jpg', SYSDATE, 4);
+INSERT INTO REVIEWS VALUES(REVIEWS_SEQ.NEXTVAL, 54, 'USER8', '상당히 괜찮은 제품입니다. 다만 실제 색감이 사진과 달라요', 'review3.jpg', SYSDATE, 4);
+INSERT INTO REVIEWS VALUES(REVIEWS_SEQ.NEXTVAL, 55, 'USER9', '이 가격에 이 옷을 사다니! 너무 좋아요! 옷감, 가격, 핏 모두 만족해요. 배송도 빨랐어요!', 'review4.jpg', SYSDATE, 5);
+INSERT INTO REVIEWS VALUES(REVIEWS_SEQ.NEXTVAL, 55, 'USER4', '그저 그런 옷입니다. 비싼데 생각보다 옷감도 그닥인거 같고.. 잘 모르겠네요', 'review2.jpg', SYSDATE, 3);
+INSERT INTO REVIEWS VALUES(REVIEWS_SEQ.NEXTVAL, 56, 'USER8', '이 가격을 주고 살만한 제품은 아니라 생각해요... 너무 비쌈', 'review1.jpg', SYSDATE, 2);
+INSERT INTO REVIEWS VALUES(REVIEWS_SEQ.NEXTVAL, 56, 'USER7', '상당히 괜찮은 제품입니다. 다만 실제 색감이 사진과 달라요', 'review3.jpg', SYSDATE, 4);
+INSERT INTO REVIEWS VALUES(REVIEWS_SEQ.NEXTVAL, 57, 'USER8', '이 가격에 이 옷을 사다니! 너무 좋아요! 옷감, 가격, 핏 모두 만족해요. 배송도 빨랐어요!', 'review4.jpg', SYSDATE, 5);
+INSERT INTO REVIEWS VALUES(REVIEWS_SEQ.NEXTVAL, 57, 'USER6', '이 가격을 주고 살만한 제품은 아니라 생각해요... 너무 비쌈', 'review1.jpg', SYSDATE, 2);
+INSERT INTO REVIEWS VALUES(REVIEWS_SEQ.NEXTVAL, 58, 'USER8', '상당히 괜찮은 제품입니다. 다만 실제 색감이 사진과 달라요', 'review3.jpg', SYSDATE, 4);
+INSERT INTO REVIEWS VALUES(REVIEWS_SEQ.NEXTVAL, 58, 'USER1', '꽤나 비싸게 샀다고 생각하는데.. 배송 늦는 건 말할것도 없고 옷도 한가운데가 찢어져서 왔어요', 'null', SYSDATE, 1);
+INSERT INTO REVIEWS VALUES(REVIEWS_SEQ.NEXTVAL, 59, 'USER9', '이 가격을 주고 살만한 제품은 아니라 생각해요... 너무 비쌈', 'review1.jpg', SYSDATE, 2);
+INSERT INTO REVIEWS VALUES(REVIEWS_SEQ.NEXTVAL, 59, 'USER10', '꽤나 비싸게 샀다고 생각하는데.. 배송 늦는 건 말할것도 없고 옷도 한가운데가 찢어져서 왔어요', 'null', SYSDATE, 1);
+INSERT INTO REVIEWS VALUES(REVIEWS_SEQ.NEXTVAL, 60, 'USER4', '상당히 괜찮은 제품입니다. 다만 실제 색감이 사진과 달라요', 'review3.jpg', SYSDATE, 4);
+INSERT INTO REVIEWS VALUES(REVIEWS_SEQ.NEXTVAL, 60, 'USER4', '상당히 괜찮은 제품입니다. 다만 실제 색감이 사진과 달라요', 'review3.jpg', SYSDATE, 4);
+INSERT INTO REVIEWS VALUES(REVIEWS_SEQ.NEXTVAL, 61, 'USER10', '상당히 괜찮은 제품입니다. 다만 실제 색감이 사진과 달라요', 'review3.jpg', SYSDATE, 4);
+INSERT INTO REVIEWS VALUES(REVIEWS_SEQ.NEXTVAL, 61, 'USER5', '꽤나 비싸게 샀다고 생각하는데.. 배송 늦는 건 말할것도 없고 옷도 한가운데가 찢어져서 왔어요', 'null', SYSDATE, 1);
+INSERT INTO REVIEWS VALUES(REVIEWS_SEQ.NEXTVAL, 62, 'USER2', '꽤나 비싸게 샀다고 생각하는데.. 배송 늦는 건 말할것도 없고 옷도 한가운데가 찢어져서 왔어요', 'null', SYSDATE, 1);
+INSERT INTO REVIEWS VALUES(REVIEWS_SEQ.NEXTVAL, 62, 'USER9', '상당히 괜찮은 제품입니다. 다만 실제 색감이 사진과 달라요', 'review3.jpg', SYSDATE, 4);
+INSERT INTO REVIEWS VALUES(REVIEWS_SEQ.NEXTVAL, 63, 'USER10', '이 가격에 이 옷을 사다니! 너무 좋아요! 옷감, 가격, 핏 모두 만족해요. 배송도 빨랐어요!', 'review4.jpg', SYSDATE, 5);
+INSERT INTO REVIEWS VALUES(REVIEWS_SEQ.NEXTVAL, 63, 'USER5', '꽤나 비싸게 샀다고 생각하는데.. 배송 늦는 건 말할것도 없고 옷도 한가운데가 찢어져서 왔어요', 'null', SYSDATE, 1);
+INSERT INTO REVIEWS VALUES(REVIEWS_SEQ.NEXTVAL, 64, 'USER9', '상당히 괜찮은 제품입니다. 다만 실제 색감이 사진과 달라요', 'review3.jpg', SYSDATE, 4);
+INSERT INTO REVIEWS VALUES(REVIEWS_SEQ.NEXTVAL, 64, 'USER9', '그저 그런 옷입니다. 비싼데 생각보다 옷감도 그닥인거 같고.. 잘 모르겠네요', 'review2.jpg', SYSDATE, 3);
+INSERT INTO REVIEWS VALUES(REVIEWS_SEQ.NEXTVAL, 65, 'USER8', '그저 그런 옷입니다. 비싼데 생각보다 옷감도 그닥인거 같고.. 잘 모르겠네요', 'review2.jpg', SYSDATE, 3);
+INSERT INTO REVIEWS VALUES(REVIEWS_SEQ.NEXTVAL, 65, 'USER2', '상당히 괜찮은 제품입니다. 다만 실제 색감이 사진과 달라요', 'review3.jpg', SYSDATE, 4);
+INSERT INTO REVIEWS VALUES(REVIEWS_SEQ.NEXTVAL, 66, 'USER2', '그저 그런 옷입니다. 비싼데 생각보다 옷감도 그닥인거 같고.. 잘 모르겠네요', 'review2.jpg', SYSDATE, 3);
+INSERT INTO REVIEWS VALUES(REVIEWS_SEQ.NEXTVAL, 66, 'USER7', '꽤나 비싸게 샀다고 생각하는데.. 배송 늦는 건 말할것도 없고 옷도 한가운데가 찢어져서 왔어요', 'null', SYSDATE, 1);
+INSERT INTO REVIEWS VALUES(REVIEWS_SEQ.NEXTVAL, 67, 'USER6', '이 가격에 이 옷을 사다니! 너무 좋아요! 옷감, 가격, 핏 모두 만족해요. 배송도 빨랐어요!', 'review4.jpg', SYSDATE, 5);
+INSERT INTO REVIEWS VALUES(REVIEWS_SEQ.NEXTVAL, 67, 'USER3', '꽤나 비싸게 샀다고 생각하는데.. 배송 늦는 건 말할것도 없고 옷도 한가운데가 찢어져서 왔어요', 'null', SYSDATE, 1);
+INSERT INTO REVIEWS VALUES(REVIEWS_SEQ.NEXTVAL, 68, 'USER6', '상당히 괜찮은 제품입니다. 다만 실제 색감이 사진과 달라요', 'review3.jpg', SYSDATE, 4);
+INSERT INTO REVIEWS VALUES(REVIEWS_SEQ.NEXTVAL, 68, 'USER4', '이 가격을 주고 살만한 제품은 아니라 생각해요... 너무 비쌈', 'review1.jpg', SYSDATE, 2);
+INSERT INTO REVIEWS VALUES(REVIEWS_SEQ.NEXTVAL, 69, 'USER9', '상당히 괜찮은 제품입니다. 다만 실제 색감이 사진과 달라요', 'review3.jpg', SYSDATE, 4);
+INSERT INTO REVIEWS VALUES(REVIEWS_SEQ.NEXTVAL, 69, 'USER1', '이 가격을 주고 살만한 제품은 아니라 생각해요... 너무 비쌈', 'review1.jpg', SYSDATE, 2);
+INSERT INTO REVIEWS VALUES(REVIEWS_SEQ.NEXTVAL, 70, 'USER8', '그저 그런 옷입니다. 비싼데 생각보다 옷감도 그닥인거 같고.. 잘 모르겠네요', 'review2.jpg', SYSDATE, 3);
+INSERT INTO REVIEWS VALUES(REVIEWS_SEQ.NEXTVAL, 70, 'USER1', '이 가격에 이 옷을 사다니! 너무 좋아요! 옷감, 가격, 핏 모두 만족해요. 배송도 빨랐어요!', 'review4.jpg', SYSDATE, 5);
+INSERT INTO REVIEWS VALUES(REVIEWS_SEQ.NEXTVAL, 71, 'USER7', '꽤나 비싸게 샀다고 생각하는데.. 배송 늦는 건 말할것도 없고 옷도 한가운데가 찢어져서 왔어요', 'null', SYSDATE, 1);
+INSERT INTO REVIEWS VALUES(REVIEWS_SEQ.NEXTVAL, 71, 'USER1', '꽤나 비싸게 샀다고 생각하는데.. 배송 늦는 건 말할것도 없고 옷도 한가운데가 찢어져서 왔어요', 'null', SYSDATE, 1);
+INSERT INTO REVIEWS VALUES(REVIEWS_SEQ.NEXTVAL, 72, 'USER6', '꽤나 비싸게 샀다고 생각하는데.. 배송 늦는 건 말할것도 없고 옷도 한가운데가 찢어져서 왔어요', 'null', SYSDATE, 1);
+INSERT INTO REVIEWS VALUES(REVIEWS_SEQ.NEXTVAL, 72, 'USER7', '상당히 괜찮은 제품입니다. 다만 실제 색감이 사진과 달라요', 'review3.jpg', SYSDATE, 4);
+INSERT INTO REVIEWS VALUES(REVIEWS_SEQ.NEXTVAL, 73, 'USER7', '상당히 괜찮은 제품입니다. 다만 실제 색감이 사진과 달라요', 'review3.jpg', SYSDATE, 4);
+INSERT INTO REVIEWS VALUES(REVIEWS_SEQ.NEXTVAL, 73, 'USER9', '이 가격에 이 옷을 사다니! 너무 좋아요! 옷감, 가격, 핏 모두 만족해요. 배송도 빨랐어요!', 'review4.jpg', SYSDATE, 5);
+INSERT INTO REVIEWS VALUES(REVIEWS_SEQ.NEXTVAL, 74, 'USER10', '이 가격을 주고 살만한 제품은 아니라 생각해요... 너무 비쌈', 'review1.jpg', SYSDATE, 2);
+INSERT INTO REVIEWS VALUES(REVIEWS_SEQ.NEXTVAL, 74, 'USER1', '꽤나 비싸게 샀다고 생각하는데.. 배송 늦는 건 말할것도 없고 옷도 한가운데가 찢어져서 왔어요', 'null', SYSDATE, 1);
+INSERT INTO REVIEWS VALUES(REVIEWS_SEQ.NEXTVAL, 75, 'USER9', '상당히 괜찮은 제품입니다. 다만 실제 색감이 사진과 달라요', 'review3.jpg', SYSDATE, 4);
+INSERT INTO REVIEWS VALUES(REVIEWS_SEQ.NEXTVAL, 75, 'USER3', '꽤나 비싸게 샀다고 생각하는데.. 배송 늦는 건 말할것도 없고 옷도 한가운데가 찢어져서 왔어요', 'null', SYSDATE, 1);
+INSERT INTO REVIEWS VALUES(REVIEWS_SEQ.NEXTVAL, 76, 'USER10', '그저 그런 옷입니다. 비싼데 생각보다 옷감도 그닥인거 같고.. 잘 모르겠네요', 'review2.jpg', SYSDATE, 3);
+INSERT INTO REVIEWS VALUES(REVIEWS_SEQ.NEXTVAL, 76, 'USER7', '꽤나 비싸게 샀다고 생각하는데.. 배송 늦는 건 말할것도 없고 옷도 한가운데가 찢어져서 왔어요', 'null', SYSDATE, 1);
+INSERT INTO REVIEWS VALUES(REVIEWS_SEQ.NEXTVAL, 77, 'USER3', '이 가격에 이 옷을 사다니! 너무 좋아요! 옷감, 가격, 핏 모두 만족해요. 배송도 빨랐어요!', 'review4.jpg', SYSDATE, 5);
+INSERT INTO REVIEWS VALUES(REVIEWS_SEQ.NEXTVAL, 77, 'USER6', '꽤나 비싸게 샀다고 생각하는데.. 배송 늦는 건 말할것도 없고 옷도 한가운데가 찢어져서 왔어요', 'null', SYSDATE, 1);
+INSERT INTO REVIEWS VALUES(REVIEWS_SEQ.NEXTVAL, 78, 'USER4', '그저 그런 옷입니다. 비싼데 생각보다 옷감도 그닥인거 같고.. 잘 모르겠네요', 'review2.jpg', SYSDATE, 3);
+INSERT INTO REVIEWS VALUES(REVIEWS_SEQ.NEXTVAL, 78, 'USER1', '그저 그런 옷입니다. 비싼데 생각보다 옷감도 그닥인거 같고.. 잘 모르겠네요', 'review2.jpg', SYSDATE, 3);
+INSERT INTO REVIEWS VALUES(REVIEWS_SEQ.NEXTVAL, 79, 'USER8', '이 가격에 이 옷을 사다니! 너무 좋아요! 옷감, 가격, 핏 모두 만족해요. 배송도 빨랐어요!', 'review4.jpg', SYSDATE, 5);
+INSERT INTO REVIEWS VALUES(REVIEWS_SEQ.NEXTVAL, 79, 'USER6', '이 가격에 이 옷을 사다니! 너무 좋아요! 옷감, 가격, 핏 모두 만족해요. 배송도 빨랐어요!', 'review4.jpg', SYSDATE, 5);
+INSERT INTO REVIEWS VALUES(REVIEWS_SEQ.NEXTVAL, 80, 'USER6', '이 가격에 이 옷을 사다니! 너무 좋아요! 옷감, 가격, 핏 모두 만족해요. 배송도 빨랐어요!', 'review4.jpg', SYSDATE, 5);
+INSERT INTO REVIEWS VALUES(REVIEWS_SEQ.NEXTVAL, 80, 'USER2', '꽤나 비싸게 샀다고 생각하는데.. 배송 늦는 건 말할것도 없고 옷도 한가운데가 찢어져서 왔어요', 'null', SYSDATE, 1);
+INSERT INTO REVIEWS VALUES(REVIEWS_SEQ.NEXTVAL, 81, 'USER4', '그저 그런 옷입니다. 비싼데 생각보다 옷감도 그닥인거 같고.. 잘 모르겠네요', 'review2.jpg', SYSDATE, 3);
+INSERT INTO REVIEWS VALUES(REVIEWS_SEQ.NEXTVAL, 81, 'USER8', '상당히 괜찮은 제품입니다. 다만 실제 색감이 사진과 달라요', 'review3.jpg', SYSDATE, 4);
+INSERT INTO REVIEWS VALUES(REVIEWS_SEQ.NEXTVAL, 82, 'USER2', '그저 그런 옷입니다. 비싼데 생각보다 옷감도 그닥인거 같고.. 잘 모르겠네요', 'review2.jpg', SYSDATE, 3);
+INSERT INTO REVIEWS VALUES(REVIEWS_SEQ.NEXTVAL, 82, 'USER7', '이 가격에 이 옷을 사다니! 너무 좋아요! 옷감, 가격, 핏 모두 만족해요. 배송도 빨랐어요!', 'review4.jpg', SYSDATE, 5);
+INSERT INTO REVIEWS VALUES(REVIEWS_SEQ.NEXTVAL, 83, 'USER6', '꽤나 비싸게 샀다고 생각하는데.. 배송 늦는 건 말할것도 없고 옷도 한가운데가 찢어져서 왔어요', 'null', SYSDATE, 1);
+INSERT INTO REVIEWS VALUES(REVIEWS_SEQ.NEXTVAL, 83, 'USER9', '그저 그런 옷입니다. 비싼데 생각보다 옷감도 그닥인거 같고.. 잘 모르겠네요', 'review2.jpg', SYSDATE, 3);
+INSERT INTO REVIEWS VALUES(REVIEWS_SEQ.NEXTVAL, 84, 'USER2', '상당히 괜찮은 제품입니다. 다만 실제 색감이 사진과 달라요', 'review3.jpg', SYSDATE, 4);
+INSERT INTO REVIEWS VALUES(REVIEWS_SEQ.NEXTVAL, 84, 'USER9', '꽤나 비싸게 샀다고 생각하는데.. 배송 늦는 건 말할것도 없고 옷도 한가운데가 찢어져서 왔어요', 'null', SYSDATE, 1);
+INSERT INTO REVIEWS VALUES(REVIEWS_SEQ.NEXTVAL, 85, 'USER6', '꽤나 비싸게 샀다고 생각하는데.. 배송 늦는 건 말할것도 없고 옷도 한가운데가 찢어져서 왔어요', 'null', SYSDATE, 1);
+INSERT INTO REVIEWS VALUES(REVIEWS_SEQ.NEXTVAL, 85, 'USER3', '상당히 괜찮은 제품입니다. 다만 실제 색감이 사진과 달라요', 'review3.jpg', SYSDATE, 4);
+INSERT INTO REVIEWS VALUES(REVIEWS_SEQ.NEXTVAL, 86, 'USER1', '꽤나 비싸게 샀다고 생각하는데.. 배송 늦는 건 말할것도 없고 옷도 한가운데가 찢어져서 왔어요', 'null', SYSDATE, 1);
+INSERT INTO REVIEWS VALUES(REVIEWS_SEQ.NEXTVAL, 86, 'USER1', '그저 그런 옷입니다. 비싼데 생각보다 옷감도 그닥인거 같고.. 잘 모르겠네요', 'review2.jpg', SYSDATE, 3);
+INSERT INTO REVIEWS VALUES(REVIEWS_SEQ.NEXTVAL, 87, 'USER1', '이 가격을 주고 살만한 제품은 아니라 생각해요... 너무 비쌈', 'review1.jpg', SYSDATE, 2);
+INSERT INTO REVIEWS VALUES(REVIEWS_SEQ.NEXTVAL, 87, 'USER1', '이 가격에 이 옷을 사다니! 너무 좋아요! 옷감, 가격, 핏 모두 만족해요. 배송도 빨랐어요!', 'review4.jpg', SYSDATE, 5);
+INSERT INTO REVIEWS VALUES(REVIEWS_SEQ.NEXTVAL, 88, 'USER2', '꽤나 비싸게 샀다고 생각하는데.. 배송 늦는 건 말할것도 없고 옷도 한가운데가 찢어져서 왔어요', 'null', SYSDATE, 1);
+INSERT INTO REVIEWS VALUES(REVIEWS_SEQ.NEXTVAL, 88, 'USER8', '이 가격을 주고 살만한 제품은 아니라 생각해요... 너무 비쌈', 'review1.jpg', SYSDATE, 2);
+INSERT INTO REVIEWS VALUES(REVIEWS_SEQ.NEXTVAL, 89, 'USER6', '그저 그런 옷입니다. 비싼데 생각보다 옷감도 그닥인거 같고.. 잘 모르겠네요', 'review2.jpg', SYSDATE, 3);
+INSERT INTO REVIEWS VALUES(REVIEWS_SEQ.NEXTVAL, 89, 'USER1', '그저 그런 옷입니다. 비싼데 생각보다 옷감도 그닥인거 같고.. 잘 모르겠네요', 'review2.jpg', SYSDATE, 3);
+INSERT INTO REVIEWS VALUES(REVIEWS_SEQ.NEXTVAL, 90, 'USER10', '이 가격에 이 옷을 사다니! 너무 좋아요! 옷감, 가격, 핏 모두 만족해요. 배송도 빨랐어요!', 'review4.jpg', SYSDATE, 5);
+INSERT INTO REVIEWS VALUES(REVIEWS_SEQ.NEXTVAL, 90, 'USER5', '그저 그런 옷입니다. 비싼데 생각보다 옷감도 그닥인거 같고.. 잘 모르겠네요', 'review2.jpg', SYSDATE, 3);
+INSERT INTO REVIEWS VALUES(REVIEWS_SEQ.NEXTVAL, 91, 'USER3', '이 가격에 이 옷을 사다니! 너무 좋아요! 옷감, 가격, 핏 모두 만족해요. 배송도 빨랐어요!', 'review4.jpg', SYSDATE, 5);
+INSERT INTO REVIEWS VALUES(REVIEWS_SEQ.NEXTVAL, 91, 'USER6', '상당히 괜찮은 제품입니다. 다만 실제 색감이 사진과 달라요', 'review3.jpg', SYSDATE, 4);
+INSERT INTO REVIEWS VALUES(REVIEWS_SEQ.NEXTVAL, 92, 'USER2', '상당히 괜찮은 제품입니다. 다만 실제 색감이 사진과 달라요', 'review3.jpg', SYSDATE, 4);
+INSERT INTO REVIEWS VALUES(REVIEWS_SEQ.NEXTVAL, 92, 'USER6', '상당히 괜찮은 제품입니다. 다만 실제 색감이 사진과 달라요', 'review3.jpg', SYSDATE, 4);
+INSERT INTO REVIEWS VALUES(REVIEWS_SEQ.NEXTVAL, 93, 'USER7', '그저 그런 옷입니다. 비싼데 생각보다 옷감도 그닥인거 같고.. 잘 모르겠네요', 'review2.jpg', SYSDATE, 3);
+INSERT INTO REVIEWS VALUES(REVIEWS_SEQ.NEXTVAL, 93, 'USER8', '그저 그런 옷입니다. 비싼데 생각보다 옷감도 그닥인거 같고.. 잘 모르겠네요', 'review2.jpg', SYSDATE, 3);
+INSERT INTO REVIEWS VALUES(REVIEWS_SEQ.NEXTVAL, 94, 'USER2', '그저 그런 옷입니다. 비싼데 생각보다 옷감도 그닥인거 같고.. 잘 모르겠네요', 'review2.jpg', SYSDATE, 3);
+INSERT INTO REVIEWS VALUES(REVIEWS_SEQ.NEXTVAL, 94, 'USER2', '상당히 괜찮은 제품입니다. 다만 실제 색감이 사진과 달라요', 'review3.jpg', SYSDATE, 4);
+INSERT INTO REVIEWS VALUES(REVIEWS_SEQ.NEXTVAL, 95, 'USER9', '꽤나 비싸게 샀다고 생각하는데.. 배송 늦는 건 말할것도 없고 옷도 한가운데가 찢어져서 왔어요', 'null', SYSDATE, 1);
+INSERT INTO REVIEWS VALUES(REVIEWS_SEQ.NEXTVAL, 95, 'USER8', '상당히 괜찮은 제품입니다. 다만 실제 색감이 사진과 달라요', 'review3.jpg', SYSDATE, 4);
+INSERT INTO REVIEWS VALUES(REVIEWS_SEQ.NEXTVAL, 96, 'USER10', '꽤나 비싸게 샀다고 생각하는데.. 배송 늦는 건 말할것도 없고 옷도 한가운데가 찢어져서 왔어요', 'null', SYSDATE, 1);
+INSERT INTO REVIEWS VALUES(REVIEWS_SEQ.NEXTVAL, 96, 'USER5', '상당히 괜찮은 제품입니다. 다만 실제 색감이 사진과 달라요', 'review3.jpg', SYSDATE, 4);
+INSERT INTO REVIEWS VALUES(REVIEWS_SEQ.NEXTVAL, 97, 'USER10', '이 가격에 이 옷을 사다니! 너무 좋아요! 옷감, 가격, 핏 모두 만족해요. 배송도 빨랐어요!', 'review4.jpg', SYSDATE, 5);
+INSERT INTO REVIEWS VALUES(REVIEWS_SEQ.NEXTVAL, 97, 'USER3', '상당히 괜찮은 제품입니다. 다만 실제 색감이 사진과 달라요', 'review3.jpg', SYSDATE, 4);
+INSERT INTO REVIEWS VALUES(REVIEWS_SEQ.NEXTVAL, 98, 'USER8', '이 가격에 이 옷을 사다니! 너무 좋아요! 옷감, 가격, 핏 모두 만족해요. 배송도 빨랐어요!', 'review4.jpg', SYSDATE, 5);
+INSERT INTO REVIEWS VALUES(REVIEWS_SEQ.NEXTVAL, 98, 'USER8', '그저 그런 옷입니다. 비싼데 생각보다 옷감도 그닥인거 같고.. 잘 모르겠네요', 'review2.jpg', SYSDATE, 3);
+INSERT INTO REVIEWS VALUES(REVIEWS_SEQ.NEXTVAL, 99, 'USER7', '상당히 괜찮은 제품입니다. 다만 실제 색감이 사진과 달라요', 'review3.jpg', SYSDATE, 4);
+INSERT INTO REVIEWS VALUES(REVIEWS_SEQ.NEXTVAL, 99, 'USER10', '이 가격을 주고 살만한 제품은 아니라 생각해요... 너무 비쌈', 'review1.jpg', SYSDATE, 2);
+INSERT INTO REVIEWS VALUES(REVIEWS_SEQ.NEXTVAL, 100, 'USER5', '이 가격을 주고 살만한 제품은 아니라 생각해요... 너무 비쌈', 'review1.jpg', SYSDATE, 2);
+INSERT INTO REVIEWS VALUES(REVIEWS_SEQ.NEXTVAL, 100, 'USER5', '이 가격에 이 옷을 사다니! 너무 좋아요! 옷감, 가격, 핏 모두 만족해요. 배송도 빨랐어요!', 'review4.jpg', SYSDATE, 5);
+INSERT INTO REVIEWS VALUES(REVIEWS_SEQ.NEXTVAL, 101, 'USER5', '이 가격을 주고 살만한 제품은 아니라 생각해요... 너무 비쌈', 'review1.jpg', SYSDATE, 2);
+INSERT INTO REVIEWS VALUES(REVIEWS_SEQ.NEXTVAL, 101, 'USER6', '꽤나 비싸게 샀다고 생각하는데.. 배송 늦는 건 말할것도 없고 옷도 한가운데가 찢어져서 왔어요', 'null', SYSDATE, 1);
+INSERT INTO REVIEWS VALUES(REVIEWS_SEQ.NEXTVAL, 102, 'USER9', '그저 그런 옷입니다. 비싼데 생각보다 옷감도 그닥인거 같고.. 잘 모르겠네요', 'review2.jpg', SYSDATE, 3);
+INSERT INTO REVIEWS VALUES(REVIEWS_SEQ.NEXTVAL, 102, 'USER4', '꽤나 비싸게 샀다고 생각하는데.. 배송 늦는 건 말할것도 없고 옷도 한가운데가 찢어져서 왔어요', 'null', SYSDATE, 1);
+INSERT INTO REVIEWS VALUES(REVIEWS_SEQ.NEXTVAL, 103, 'USER5', '상당히 괜찮은 제품입니다. 다만 실제 색감이 사진과 달라요', 'review3.jpg', SYSDATE, 4);
+INSERT INTO REVIEWS VALUES(REVIEWS_SEQ.NEXTVAL, 103, 'USER1', '꽤나 비싸게 샀다고 생각하는데.. 배송 늦는 건 말할것도 없고 옷도 한가운데가 찢어져서 왔어요', 'null', SYSDATE, 1);
+INSERT INTO REVIEWS VALUES(REVIEWS_SEQ.NEXTVAL, 104, 'USER9', '그저 그런 옷입니다. 비싼데 생각보다 옷감도 그닥인거 같고.. 잘 모르겠네요', 'review2.jpg', SYSDATE, 3);
+INSERT INTO REVIEWS VALUES(REVIEWS_SEQ.NEXTVAL, 104, 'USER7', '그저 그런 옷입니다. 비싼데 생각보다 옷감도 그닥인거 같고.. 잘 모르겠네요', 'review2.jpg', SYSDATE, 3);
+INSERT INTO REVIEWS VALUES(REVIEWS_SEQ.NEXTVAL, 105, 'USER3', '그저 그런 옷입니다. 비싼데 생각보다 옷감도 그닥인거 같고.. 잘 모르겠네요', 'review2.jpg', SYSDATE, 3);
+INSERT INTO REVIEWS VALUES(REVIEWS_SEQ.NEXTVAL, 105, 'USER4', '상당히 괜찮은 제품입니다. 다만 실제 색감이 사진과 달라요', 'review3.jpg', SYSDATE, 4);
+INSERT INTO REVIEWS VALUES(REVIEWS_SEQ.NEXTVAL, 106, 'USER9', '이 가격에 이 옷을 사다니! 너무 좋아요! 옷감, 가격, 핏 모두 만족해요. 배송도 빨랐어요!', 'review4.jpg', SYSDATE, 5);
+INSERT INTO REVIEWS VALUES(REVIEWS_SEQ.NEXTVAL, 106, 'USER7', '이 가격을 주고 살만한 제품은 아니라 생각해요... 너무 비쌈', 'review1.jpg', SYSDATE, 2);
+INSERT INTO REVIEWS VALUES(REVIEWS_SEQ.NEXTVAL, 107, 'USER9', '상당히 괜찮은 제품입니다. 다만 실제 색감이 사진과 달라요', 'review3.jpg', SYSDATE, 4);
+INSERT INTO REVIEWS VALUES(REVIEWS_SEQ.NEXTVAL, 107, 'USER8', '이 가격을 주고 살만한 제품은 아니라 생각해요... 너무 비쌈', 'review1.jpg', SYSDATE, 2);
+INSERT INTO REVIEWS VALUES(REVIEWS_SEQ.NEXTVAL, 108, 'USER10', '그저 그런 옷입니다. 비싼데 생각보다 옷감도 그닥인거 같고.. 잘 모르겠네요', 'review2.jpg', SYSDATE, 3);
+INSERT INTO REVIEWS VALUES(REVIEWS_SEQ.NEXTVAL, 108, 'USER3', '꽤나 비싸게 샀다고 생각하는데.. 배송 늦는 건 말할것도 없고 옷도 한가운데가 찢어져서 왔어요', 'null', SYSDATE, 1);
+INSERT INTO REVIEWS VALUES(REVIEWS_SEQ.NEXTVAL, 109, 'USER8', '꽤나 비싸게 샀다고 생각하는데.. 배송 늦는 건 말할것도 없고 옷도 한가운데가 찢어져서 왔어요', 'null', SYSDATE, 1);
+INSERT INTO REVIEWS VALUES(REVIEWS_SEQ.NEXTVAL, 109, 'USER7', '상당히 괜찮은 제품입니다. 다만 실제 색감이 사진과 달라요', 'review3.jpg', SYSDATE, 4);
+INSERT INTO REVIEWS VALUES(REVIEWS_SEQ.NEXTVAL, 110, 'USER2', '이 가격을 주고 살만한 제품은 아니라 생각해요... 너무 비쌈', 'review1.jpg', SYSDATE, 2);
+INSERT INTO REVIEWS VALUES(REVIEWS_SEQ.NEXTVAL, 110, 'USER9', '이 가격에 이 옷을 사다니! 너무 좋아요! 옷감, 가격, 핏 모두 만족해요. 배송도 빨랐어요!', 'review4.jpg', SYSDATE, 5);
+INSERT INTO REVIEWS VALUES(REVIEWS_SEQ.NEXTVAL, 111, 'USER4', '상당히 괜찮은 제품입니다. 다만 실제 색감이 사진과 달라요', 'review3.jpg', SYSDATE, 4);
+INSERT INTO REVIEWS VALUES(REVIEWS_SEQ.NEXTVAL, 111, 'USER10', '꽤나 비싸게 샀다고 생각하는데.. 배송 늦는 건 말할것도 없고 옷도 한가운데가 찢어져서 왔어요', 'null', SYSDATE, 1);
+INSERT INTO REVIEWS VALUES(REVIEWS_SEQ.NEXTVAL, 112, 'USER8', '이 가격을 주고 살만한 제품은 아니라 생각해요... 너무 비쌈', 'review1.jpg', SYSDATE, 2);
+INSERT INTO REVIEWS VALUES(REVIEWS_SEQ.NEXTVAL, 112, 'USER10', '상당히 괜찮은 제품입니다. 다만 실제 색감이 사진과 달라요', 'review3.jpg', SYSDATE, 4);
+INSERT INTO REVIEWS VALUES(REVIEWS_SEQ.NEXTVAL, 113, 'USER3', '상당히 괜찮은 제품입니다. 다만 실제 색감이 사진과 달라요', 'review3.jpg', SYSDATE, 4);
+INSERT INTO REVIEWS VALUES(REVIEWS_SEQ.NEXTVAL, 113, 'USER6', '그저 그런 옷입니다. 비싼데 생각보다 옷감도 그닥인거 같고.. 잘 모르겠네요', 'review2.jpg', SYSDATE, 3);
+INSERT INTO REVIEWS VALUES(REVIEWS_SEQ.NEXTVAL, 114, 'USER4', '그저 그런 옷입니다. 비싼데 생각보다 옷감도 그닥인거 같고.. 잘 모르겠네요', 'review2.jpg', SYSDATE, 3);
+INSERT INTO REVIEWS VALUES(REVIEWS_SEQ.NEXTVAL, 114, 'USER1', '꽤나 비싸게 샀다고 생각하는데.. 배송 늦는 건 말할것도 없고 옷도 한가운데가 찢어져서 왔어요', 'null', SYSDATE, 1);
+INSERT INTO REVIEWS VALUES(REVIEWS_SEQ.NEXTVAL, 115, 'USER6', '꽤나 비싸게 샀다고 생각하는데.. 배송 늦는 건 말할것도 없고 옷도 한가운데가 찢어져서 왔어요', 'null', SYSDATE, 1);
+INSERT INTO REVIEWS VALUES(REVIEWS_SEQ.NEXTVAL, 115, 'USER5', '이 가격을 주고 살만한 제품은 아니라 생각해요... 너무 비쌈', 'review1.jpg', SYSDATE, 2);
+INSERT INTO REVIEWS VALUES(REVIEWS_SEQ.NEXTVAL, 116, 'USER6', '이 가격에 이 옷을 사다니! 너무 좋아요! 옷감, 가격, 핏 모두 만족해요. 배송도 빨랐어요!', 'review4.jpg', SYSDATE, 5);
+INSERT INTO REVIEWS VALUES(REVIEWS_SEQ.NEXTVAL, 116, 'USER6', '이 가격을 주고 살만한 제품은 아니라 생각해요... 너무 비쌈', 'review1.jpg', SYSDATE, 2);
+INSERT INTO REVIEWS VALUES(REVIEWS_SEQ.NEXTVAL, 117, 'USER5', '이 가격에 이 옷을 사다니! 너무 좋아요! 옷감, 가격, 핏 모두 만족해요. 배송도 빨랐어요!', 'review4.jpg', SYSDATE, 5);
+INSERT INTO REVIEWS VALUES(REVIEWS_SEQ.NEXTVAL, 117, 'USER10', '상당히 괜찮은 제품입니다. 다만 실제 색감이 사진과 달라요', 'review3.jpg', SYSDATE, 4);
+INSERT INTO REVIEWS VALUES(REVIEWS_SEQ.NEXTVAL, 118, 'USER2', '상당히 괜찮은 제품입니다. 다만 실제 색감이 사진과 달라요', 'review3.jpg', SYSDATE, 4);
+INSERT INTO REVIEWS VALUES(REVIEWS_SEQ.NEXTVAL, 118, 'USER1', '상당히 괜찮은 제품입니다. 다만 실제 색감이 사진과 달라요', 'review3.jpg', SYSDATE, 4);
+INSERT INTO REVIEWS VALUES(REVIEWS_SEQ.NEXTVAL, 119, 'USER1', '이 가격을 주고 살만한 제품은 아니라 생각해요... 너무 비쌈', 'review1.jpg', SYSDATE, 2);
+INSERT INTO REVIEWS VALUES(REVIEWS_SEQ.NEXTVAL, 119, 'USER10', '그저 그런 옷입니다. 비싼데 생각보다 옷감도 그닥인거 같고.. 잘 모르겠네요', 'review2.jpg', SYSDATE, 3);
+INSERT INTO REVIEWS VALUES(REVIEWS_SEQ.NEXTVAL, 120, 'USER6', '꽤나 비싸게 샀다고 생각하는데.. 배송 늦는 건 말할것도 없고 옷도 한가운데가 찢어져서 왔어요', 'null', SYSDATE, 1);
+INSERT INTO REVIEWS VALUES(REVIEWS_SEQ.NEXTVAL, 120, 'USER4', '이 가격에 이 옷을 사다니! 너무 좋아요! 옷감, 가격, 핏 모두 만족해요. 배송도 빨랐어요!', 'review4.jpg', SYSDATE, 5);
+INSERT INTO REVIEWS VALUES(REVIEWS_SEQ.NEXTVAL, 121, 'USER8', '이 가격을 주고 살만한 제품은 아니라 생각해요... 너무 비쌈', 'review1.jpg', SYSDATE, 2);
+INSERT INTO REVIEWS VALUES(REVIEWS_SEQ.NEXTVAL, 121, 'USER10', '꽤나 비싸게 샀다고 생각하는데.. 배송 늦는 건 말할것도 없고 옷도 한가운데가 찢어져서 왔어요', 'null', SYSDATE, 1);
+INSERT INTO REVIEWS VALUES(REVIEWS_SEQ.NEXTVAL, 122, 'USER6', '그저 그런 옷입니다. 비싼데 생각보다 옷감도 그닥인거 같고.. 잘 모르겠네요', 'review2.jpg', SYSDATE, 3);
+INSERT INTO REVIEWS VALUES(REVIEWS_SEQ.NEXTVAL, 122, 'USER1', '그저 그런 옷입니다. 비싼데 생각보다 옷감도 그닥인거 같고.. 잘 모르겠네요', 'review2.jpg', SYSDATE, 3);
+INSERT INTO REVIEWS VALUES(REVIEWS_SEQ.NEXTVAL, 123, 'USER6', '이 가격을 주고 살만한 제품은 아니라 생각해요... 너무 비쌈', 'review1.jpg', SYSDATE, 2);
+INSERT INTO REVIEWS VALUES(REVIEWS_SEQ.NEXTVAL, 123, 'USER8', '꽤나 비싸게 샀다고 생각하는데.. 배송 늦는 건 말할것도 없고 옷도 한가운데가 찢어져서 왔어요', 'null', SYSDATE, 1);
+INSERT INTO REVIEWS VALUES(REVIEWS_SEQ.NEXTVAL, 124, 'USER1', '그저 그런 옷입니다. 비싼데 생각보다 옷감도 그닥인거 같고.. 잘 모르겠네요', 'review2.jpg', SYSDATE, 3);
+INSERT INTO REVIEWS VALUES(REVIEWS_SEQ.NEXTVAL, 124, 'USER2', '그저 그런 옷입니다. 비싼데 생각보다 옷감도 그닥인거 같고.. 잘 모르겠네요', 'review2.jpg', SYSDATE, 3);
+INSERT INTO REVIEWS VALUES(REVIEWS_SEQ.NEXTVAL, 125, 'USER9', '상당히 괜찮은 제품입니다. 다만 실제 색감이 사진과 달라요', 'review3.jpg', SYSDATE, 4);
+INSERT INTO REVIEWS VALUES(REVIEWS_SEQ.NEXTVAL, 125, 'USER1', '꽤나 비싸게 샀다고 생각하는데.. 배송 늦는 건 말할것도 없고 옷도 한가운데가 찢어져서 왔어요', 'null', SYSDATE, 1);
+INSERT INTO REVIEWS VALUES(REVIEWS_SEQ.NEXTVAL, 126, 'USER3', '그저 그런 옷입니다. 비싼데 생각보다 옷감도 그닥인거 같고.. 잘 모르겠네요', 'review2.jpg', SYSDATE, 3);
+INSERT INTO REVIEWS VALUES(REVIEWS_SEQ.NEXTVAL, 126, 'USER8', '이 가격에 이 옷을 사다니! 너무 좋아요! 옷감, 가격, 핏 모두 만족해요. 배송도 빨랐어요!', 'review4.jpg', SYSDATE, 5);
+INSERT INTO REVIEWS VALUES(REVIEWS_SEQ.NEXTVAL, 127, 'USER2', '이 가격에 이 옷을 사다니! 너무 좋아요! 옷감, 가격, 핏 모두 만족해요. 배송도 빨랐어요!', 'review4.jpg', SYSDATE, 5);
+INSERT INTO REVIEWS VALUES(REVIEWS_SEQ.NEXTVAL, 127, 'USER1', '상당히 괜찮은 제품입니다. 다만 실제 색감이 사진과 달라요', 'review3.jpg', SYSDATE, 4);
+INSERT INTO REVIEWS VALUES(REVIEWS_SEQ.NEXTVAL, 128, 'USER5', '이 가격을 주고 살��한 제품은 아니라 생각해요... 너무 비쌈', 'review1.jpg', SYSDATE, 2);
+INSERT INTO REVIEWS VALUES(REVIEWS_SEQ.NEXTVAL, 128, 'USER2', '상당히 괜찮은 제품입니다. 다만 실제 색감이 사진과 달라요', 'review3.jpg', SYSDATE, 4);
+INSERT INTO REVIEWS VALUES(REVIEWS_SEQ.NEXTVAL, 129, 'USER6', '그저 그런 옷입니다. 비싼데 생각보다 옷감도 그닥인거 같고.. 잘 모르겠네요', 'review2.jpg', SYSDATE, 3);
+INSERT INTO REVIEWS VALUES(REVIEWS_SEQ.NEXTVAL, 129, 'USER7', '그저 그런 옷입니다. 비싼데 생각보다 옷감도 그닥인거 같고.. 잘 모르겠네요', 'review2.jpg', SYSDATE, 3);
+INSERT INTO REVIEWS VALUES(REVIEWS_SEQ.NEXTVAL, 130, 'USER6', '꽤나 비싸게 샀다고 생각하는데.. 배송 늦는 건 말할것도 없고 옷도 한가운데가 찢어져서 왔어요', 'null', SYSDATE, 1);
+INSERT INTO REVIEWS VALUES(REVIEWS_SEQ.NEXTVAL, 130, 'USER9', '이 가격을 주고 살만한 제품은 아니라 생각해요... 너무 비쌈', 'review1.jpg', SYSDATE, 2);
+INSERT INTO REVIEWS VALUES(REVIEWS_SEQ.NEXTVAL, 131, 'USER1', '이 가격에 이 옷을 사다니! 너무 좋아요! 옷감, 가격, 핏 모두 만족해요. 배송도 빨랐어요!', 'review4.jpg', SYSDATE, 5);
+INSERT INTO REVIEWS VALUES(REVIEWS_SEQ.NEXTVAL, 131, 'USER8', '이 가격에 이 옷을 사다니! 너무 좋아요! 옷감, 가격, 핏 모두 만족해요. 배송도 빨랐어요!', 'review4.jpg', SYSDATE, 5);
+INSERT INTO REVIEWS VALUES(REVIEWS_SEQ.NEXTVAL, 132, 'USER4', '이 가격에 이 옷을 사다니! 너무 좋아요! 옷감, 가격, 핏 모두 만족해요. 배송도 빨랐어요!', 'review4.jpg', SYSDATE, 5);
+INSERT INTO REVIEWS VALUES(REVIEWS_SEQ.NEXTVAL, 132, 'USER5', '그저 그런 옷입니다. 비싼데 생각보다 옷감도 그닥인거 같고.. 잘 모르겠네요', 'review2.jpg', SYSDATE, 3);
+INSERT INTO REVIEWS VALUES(REVIEWS_SEQ.NEXTVAL, 133, 'USER4', '이 가격에 이 옷을 사다니! 너무 좋아요! 옷감, 가격, 핏 모두 만족해요. 배송도 빨랐어요!', 'review4.jpg', SYSDATE, 5);
+INSERT INTO REVIEWS VALUES(REVIEWS_SEQ.NEXTVAL, 133, 'USER2', '꽤나 비싸게 샀다고 생각하는데.. 배송 늦는 건 말할것도 없고 옷도 한가운데가 찢어져서 왔어요', 'null', SYSDATE, 1);
+INSERT INTO REVIEWS VALUES(REVIEWS_SEQ.NEXTVAL, 134, 'USER1', '이 가격에 이 옷을 사다니! 너무 좋아요! 옷감, 가격, 핏 모두 만족해요. 배송도 빨랐어요!', 'review4.jpg', SYSDATE, 5);
+INSERT INTO REVIEWS VALUES(REVIEWS_SEQ.NEXTVAL, 134, 'USER7', '이 가격을 주고 살만한 제품은 아니라 생각해요... 너무 비쌈', 'review1.jpg', SYSDATE, 2);
+INSERT INTO REVIEWS VALUES(REVIEWS_SEQ.NEXTVAL, 135, 'USER3', '이 가격을 주고 살만한 제품은 아니라 생각해요... 너무 비쌈', 'review1.jpg', SYSDATE, 2);
+INSERT INTO REVIEWS VALUES(REVIEWS_SEQ.NEXTVAL, 135, 'USER10', '이 가격에 이 옷을 사다니! 너무 좋아요! 옷감, 가격, 핏 모두 만족해요. 배송도 빨랐어요!', 'review4.jpg', SYSDATE, 5);
+INSERT INTO REVIEWS VALUES(REVIEWS_SEQ.NEXTVAL, 136, 'USER10', '그저 그런 옷입니다. 비싼데 생각보다 옷감도 그닥인거 같고.. 잘 모르겠네요', 'review2.jpg', SYSDATE, 3);
+INSERT INTO REVIEWS VALUES(REVIEWS_SEQ.NEXTVAL, 136, 'USER3', '꽤나 비싸게 샀다고 생각하는데.. 배송 늦는 건 말할것도 없고 옷도 한가운데가 찢어져서 왔어요', 'null', SYSDATE, 1);
+INSERT INTO REVIEWS VALUES(REVIEWS_SEQ.NEXTVAL, 137, 'USER7', '꽤나 비싸게 샀다고 생각하는데.. 배송 늦는 건 말할것도 없고 옷도 한가운데가 찢어져서 왔어요', 'null', SYSDATE, 1);
+INSERT INTO REVIEWS VALUES(REVIEWS_SEQ.NEXTVAL, 137, 'USER9', '그저 그런 옷입니다. 비싼데 생각보다 옷감도 그닥인거 같고.. 잘 모르겠네요', 'review2.jpg', SYSDATE, 3);
+INSERT INTO REVIEWS VALUES(REVIEWS_SEQ.NEXTVAL, 138, 'USER9', '이 가격에 이 옷을 사다니! 너무 좋아요! 옷감, 가격, 핏 모두 만족해요. 배송도 빨랐어요!', 'review4.jpg', SYSDATE, 5);
+INSERT INTO REVIEWS VALUES(REVIEWS_SEQ.NEXTVAL, 138, 'USER10', '그저 그런 옷입니다. 비싼데 생각보다 옷감도 그닥인거 같고.. 잘 모르겠네요', 'review2.jpg', SYSDATE, 3);
+INSERT INTO REVIEWS VALUES(REVIEWS_SEQ.NEXTVAL, 139, 'USER6', '그저 그런 옷입니다. 비싼데 생각보다 옷감도 그닥인거 같고.. 잘 모르겠네요', 'review2.jpg', SYSDATE, 3);
+INSERT INTO REVIEWS VALUES(REVIEWS_SEQ.NEXTVAL, 139, 'USER10', '그저 그런 옷입니다. 비싼데 생각보다 옷감도 그닥인거 같고.. 잘 모르겠네요', 'review2.jpg', SYSDATE, 3);
+INSERT INTO REVIEWS VALUES(REVIEWS_SEQ.NEXTVAL, 140, 'USER7', '꽤나 비싸게 샀다고 생각하는데.. 배송 늦는 건 말할것도 없고 옷도 한가운데가 찢어져서 왔어요', 'null', SYSDATE, 1);
+INSERT INTO REVIEWS VALUES(REVIEWS_SEQ.NEXTVAL, 140, 'USER7', '이 가격을 주고 살만한 제품은 아니라 생각해요... 너무 비쌈', 'review1.jpg', SYSDATE, 2);
+INSERT INTO REVIEWS VALUES(REVIEWS_SEQ.NEXTVAL, 141, 'USER5', '이 가격에 이 옷을 사다니! 너무 좋아요! 옷감, 가격, 핏 모두 만족해요. 배송도 빨랐어요!', 'review4.jpg', SYSDATE, 5);
+INSERT INTO REVIEWS VALUES(REVIEWS_SEQ.NEXTVAL, 141, 'USER7', '상당히 괜찮은 제품입니다. 다만 실제 색감이 사진과 달라요', 'review3.jpg', SYSDATE, 4);
+INSERT INTO REVIEWS VALUES(REVIEWS_SEQ.NEXTVAL, 142, 'USER1', '이 가격에 이 옷을 사다니! 너무 좋아요! 옷감, 가격, 핏 모두 만족해요. 배송도 빨랐어요!', 'review4.jpg', SYSDATE, 5);
+INSERT INTO REVIEWS VALUES(REVIEWS_SEQ.NEXTVAL, 142, 'USER4', '그저 그런 옷입니다. 비싼데 생각보다 옷감도 그닥인거 같고.. 잘 모르겠네요', 'review2.jpg', SYSDATE, 3);
+INSERT INTO REVIEWS VALUES(REVIEWS_SEQ.NEXTVAL, 143, 'USER6', '이 가격에 이 옷을 사다니! 너무 좋아요! 옷감, 가격, 핏 모두 만족해요. 배송도 빨랐어요!', 'review4.jpg', SYSDATE, 5);
+INSERT INTO REVIEWS VALUES(REVIEWS_SEQ.NEXTVAL, 143, 'USER5', '그저 그런 옷입니다. 비싼데 생각보다 옷감도 그닥인거 같고.. 잘 모르겠네요', 'review2.jpg', SYSDATE, 3);
+INSERT INTO REVIEWS VALUES(REVIEWS_SEQ.NEXTVAL, 144, 'USER6', '이 가격을 주고 살만한 제품은 아니라 생각해요... 너무 비쌈', 'review1.jpg', SYSDATE, 2);
+INSERT INTO REVIEWS VALUES(REVIEWS_SEQ.NEXTVAL, 144, 'USER6', '이 가격을 주고 살만한 제품은 아니라 생각해요... 너무 비쌈', 'review1.jpg', SYSDATE, 2);
+INSERT INTO REVIEWS VALUES(REVIEWS_SEQ.NEXTVAL, 145, 'USER9', '이 가격을 주고 살만한 제품은 아니라 생각해요... 너무 비쌈', 'review1.jpg', SYSDATE, 2);
+INSERT INTO REVIEWS VALUES(REVIEWS_SEQ.NEXTVAL, 145, 'USER1', '상당히 괜찮은 제품입니다. 다만 실제 색감이 사진과 달라요', 'review3.jpg', SYSDATE, 4);
+INSERT INTO REVIEWS VALUES(REVIEWS_SEQ.NEXTVAL, 146, 'USER6', '그저 그런 옷입니다. 비싼데 생각보다 옷감도 그닥인거 같고.. 잘 모르겠네요', 'review2.jpg', SYSDATE, 3);
+INSERT INTO REVIEWS VALUES(REVIEWS_SEQ.NEXTVAL, 146, 'USER9', '꽤나 비싸게 샀다고 생각하는데.. 배송 늦는 건 말할것도 없고 옷도 한가운데가 찢어져서 왔어요', 'null', SYSDATE, 1);
+INSERT INTO REVIEWS VALUES(REVIEWS_SEQ.NEXTVAL, 147, 'USER1', '꽤나 비싸게 샀다고 생각하는데.. 배송 늦는 건 말할것도 없고 옷도 한가운데가 찢어져서 왔어요', 'null', SYSDATE, 1);
+INSERT INTO REVIEWS VALUES(REVIEWS_SEQ.NEXTVAL, 147, 'USER9', '상당히 괜찮은 제품입니다. 다만 실제 색감이 사진과 달라요', 'review3.jpg', SYSDATE, 4);
+INSERT INTO REVIEWS VALUES(REVIEWS_SEQ.NEXTVAL, 148, 'USER3', '그저 그런 옷입니다. 비싼데 생각보다 옷감도 그닥인거 같고.. 잘 모르겠네요', 'review2.jpg', SYSDATE, 3);
+INSERT INTO REVIEWS VALUES(REVIEWS_SEQ.NEXTVAL, 148, 'USER9', '상당히 괜찮은 제품입니다. 다만 실제 색감이 사진과 달라요', 'review3.jpg', SYSDATE, 4);
+INSERT INTO REVIEWS VALUES(REVIEWS_SEQ.NEXTVAL, 149, 'USER6', '꽤나 비싸게 샀다고 생각하는데.. 배송 늦는 건 말할것도 없고 옷도 한가운데가 찢어져서 왔어요', 'null', SYSDATE, 1);
+INSERT INTO REVIEWS VALUES(REVIEWS_SEQ.NEXTVAL, 149, 'USER2', '꽤나 비싸게 샀다고 생각하는데.. 배송 늦는 건 말할것도 없고 옷도 한가운데가 찢어져서 왔어요', 'null', SYSDATE, 1);
+INSERT INTO REVIEWS VALUES(REVIEWS_SEQ.NEXTVAL, 150, 'USER1', '이 가격에 이 옷을 사다니! 너무 좋아요! 옷감, 가격, 핏 모두 만족해요. 배송도 빨랐어요!', 'review4.jpg', SYSDATE, 5);
+INSERT INTO REVIEWS VALUES(REVIEWS_SEQ.NEXTVAL, 150, 'USER1', '이 가격에 이 옷을 사다니! 너무 좋아요! 옷감, 가격, 핏 모두 만족해요. 배송도 빨랐어요!', 'review4.jpg', SYSDATE, 5);
+INSERT INTO REVIEWS VALUES(REVIEWS_SEQ.NEXTVAL, 151, 'USER8', '그저 그런 옷입니다. 비싼데 생각보다 옷감도 그닥인거 같고.. 잘 모르겠네요', 'review2.jpg', SYSDATE, 3);
+INSERT INTO REVIEWS VALUES(REVIEWS_SEQ.NEXTVAL, 151, 'USER6', '꽤나 비싸게 샀다고 생각하는데.. 배송 늦는 건 말할것도 없고 옷도 한가운데가 찢어져서 왔어요', 'null', SYSDATE, 1);
+INSERT INTO REVIEWS VALUES(REVIEWS_SEQ.NEXTVAL, 152, 'USER2', '상당히 괜찮은 제품입니다. 다만 실제 색감이 사진과 달라요', 'review3.jpg', SYSDATE, 4);
+INSERT INTO REVIEWS VALUES(REVIEWS_SEQ.NEXTVAL, 152, 'USER5', '그저 그런 옷입니다. 비싼데 생각보다 옷감도 그닥인거 같고.. 잘 모르겠네요', 'review2.jpg', SYSDATE, 3);
+INSERT INTO REVIEWS VALUES(REVIEWS_SEQ.NEXTVAL, 153, 'USER5', '이 가격을 주고 살만한 제품은 아니라 생각해요... 너무 비쌈', 'review1.jpg', SYSDATE, 2);
+INSERT INTO REVIEWS VALUES(REVIEWS_SEQ.NEXTVAL, 153, 'USER2', '그저 그런 옷입니다. 비싼데 생각보다 옷감도 그닥인거 같고.. 잘 모르겠네요', 'review2.jpg', SYSDATE, 3);
+INSERT INTO REVIEWS VALUES(REVIEWS_SEQ.NEXTVAL, 154, 'USER6', '이 가격을 주고 살만한 제품은 아니라 생각해요... 너무 비쌈', 'review1.jpg', SYSDATE, 2);
+INSERT INTO REVIEWS VALUES(REVIEWS_SEQ.NEXTVAL, 154, 'USER3', '꽤나 비싸게 샀다고 생각하는데.. 배송 늦는 건 말할것도 없고 옷도 한가운데가 찢어져서 왔어요', 'null', SYSDATE, 1);
+INSERT INTO REVIEWS VALUES(REVIEWS_SEQ.NEXTVAL, 155, 'USER5', '이 가격에 이 옷을 사다니! 너무 좋아요! 옷감, 가격, 핏 모두 만족해요. 배송도 빨랐어요!', 'review4.jpg', SYSDATE, 5);
+INSERT INTO REVIEWS VALUES(REVIEWS_SEQ.NEXTVAL, 155, 'USER7', '이 가격에 이 옷을 사다니! 너무 좋아요! 옷감, 가격, 핏 모두 만족해요. 배송도 빨랐어요!', 'review4.jpg', SYSDATE, 5);
+INSERT INTO REVIEWS VALUES(REVIEWS_SEQ.NEXTVAL, 156, 'USER1', '이 가격을 주고 살만한 제품은 아니라 생각해요... 너무 비쌈', 'review1.jpg', SYSDATE, 2);
+INSERT INTO REVIEWS VALUES(REVIEWS_SEQ.NEXTVAL, 156, 'USER3', '꽤나 비싸게 샀다고 생각하는데.. 배송 늦는 건 말할것도 없고 옷도 한가운데가 찢어져서 왔어요', 'null', SYSDATE, 1);
+INSERT INTO REVIEWS VALUES(REVIEWS_SEQ.NEXTVAL, 157, 'USER7', '이 가격을 주고 살만한 제품은 아니라 생각해요... 너무 비쌈', 'review1.jpg', SYSDATE, 2);
+INSERT INTO REVIEWS VALUES(REVIEWS_SEQ.NEXTVAL, 157, 'USER9', '그저 그런 옷입니다. 비싼데 생각보다 옷감도 그닥인거 같고.. 잘 모르겠네요', 'review2.jpg', SYSDATE, 3);
+INSERT INTO REVIEWS VALUES(REVIEWS_SEQ.NEXTVAL, 158, 'USER4', '꽤나 비싸게 샀다고 생각하는데.. 배송 늦는 건 말할것도 없고 옷도 한가운데가 찢어져서 왔어요', 'null', SYSDATE, 1);
+INSERT INTO REVIEWS VALUES(REVIEWS_SEQ.NEXTVAL, 158, 'USER5', '상당히 괜찮은 제품입니다. 다만 실제 색감이 사진과 달라요', 'review3.jpg', SYSDATE, 4);
+INSERT INTO REVIEWS VALUES(REVIEWS_SEQ.NEXTVAL, 159, 'USER6', '꽤나 비싸게 샀다고 생각하는데.. 배송 늦는 건 말할것도 없고 옷도 한가운데가 찢어져서 왔어요', 'null', SYSDATE, 1);
+INSERT INTO REVIEWS VALUES(REVIEWS_SEQ.NEXTVAL, 159, 'USER1', '상당히 괜찮은 제품입니다. 다만 실제 색감이 사진과 달라요', 'review3.jpg', SYSDATE, 4);
+INSERT INTO REVIEWS VALUES(REVIEWS_SEQ.NEXTVAL, 160, 'USER7', '꽤나 비싸게 샀다고 생각하는데.. 배송 늦는 건 말할것도 없고 옷도 한가운데가 찢어져서 왔어요', 'null', SYSDATE, 1);
+INSERT INTO REVIEWS VALUES(REVIEWS_SEQ.NEXTVAL, 160, 'USER6', '그저 그런 옷입니다. 비싼데 생각보다 옷감도 그닥인거 같고.. 잘 모르겠네요', 'review2.jpg', SYSDATE, 3);
+INSERT INTO REVIEWS VALUES(REVIEWS_SEQ.NEXTVAL, 161, 'USER2', '이 가격에 이 옷을 사다니! 너무 좋아요! 옷감, 가격, 핏 모두 만족해요. 배송도 빨랐어요!', 'review4.jpg', SYSDATE, 5);
+INSERT INTO REVIEWS VALUES(REVIEWS_SEQ.NEXTVAL, 161, 'USER8', '이 가격을 주고 살만한 제품은 아니라 생각해요... 너무 비쌈', 'review1.jpg', SYSDATE, 2);
+INSERT INTO REVIEWS VALUES(REVIEWS_SEQ.NEXTVAL, 162, 'USER3', '상당히 괜찮은 제품입니다. 다만 실제 색감이 사진과 달라요', 'review3.jpg', SYSDATE, 4);
+INSERT INTO REVIEWS VALUES(REVIEWS_SEQ.NEXTVAL, 162, 'USER6', '꽤나 비싸게 샀다고 생각하는데.. 배송 늦는 건 말할것도 없고 옷도 한가운데가 찢어져서 왔어요', 'null', SYSDATE, 1);
+INSERT INTO REVIEWS VALUES(REVIEWS_SEQ.NEXTVAL, 163, 'USER7', '그저 그런 옷입니다. 비싼데 생각보다 옷감도 그닥인거 같고.. 잘 모르겠네요', 'review2.jpg', SYSDATE, 3);
+INSERT INTO REVIEWS VALUES(REVIEWS_SEQ.NEXTVAL, 163, 'USER4', '이 가격에 이 옷을 사다니! 너무 좋아요! 옷감, 가격, 핏 모두 만족해요. 배송도 빨랐어요!', 'review4.jpg', SYSDATE, 5);
+INSERT INTO REVIEWS VALUES(REVIEWS_SEQ.NEXTVAL, 164, 'USER2', '이 가격에 이 옷을 사다니! 너무 좋아요! 옷감, 가격, 핏 모두 만족해요. 배송도 빨랐어요!', 'review4.jpg', SYSDATE, 5);
+INSERT INTO REVIEWS VALUES(REVIEWS_SEQ.NEXTVAL, 164, 'USER1', '이 가격에 이 옷을 사다니! 너무 좋아요! 옷감, 가격, 핏 모두 만족해요. 배송도 빨랐어요!', 'review4.jpg', SYSDATE, 5);
+INSERT INTO REVIEWS VALUES(REVIEWS_SEQ.NEXTVAL, 165, 'USER9', '이 가격을 주고 살만한 제품은 아니라 생각해요... 너무 비쌈', 'review1.jpg', SYSDATE, 2);
+INSERT INTO REVIEWS VALUES(REVIEWS_SEQ.NEXTVAL, 165, 'USER10', '상당히 괜찮은 제품입니다. 다만 실제 색감이 사진과 달라요', 'review3.jpg', SYSDATE, 4);
+INSERT INTO REVIEWS VALUES(REVIEWS_SEQ.NEXTVAL, 166, 'USER4', '이 가격을 주고 살만한 제품은 아니라 생각해요... 너무 비쌈', 'review1.jpg', SYSDATE, 2);
+INSERT INTO REVIEWS VALUES(REVIEWS_SEQ.NEXTVAL, 166, 'USER6', '상당히 괜찮은 제품입니다. 다만 실제 색감이 사진과 달라요', 'review3.jpg', SYSDATE, 4);
+INSERT INTO REVIEWS VALUES(REVIEWS_SEQ.NEXTVAL, 167, 'USER3', '이 가격에 이 옷을 사다니! 너무 좋아요! 옷감, 가격, 핏 모두 만족해요. 배송도 빨랐어요!', 'review4.jpg', SYSDATE, 5);
+INSERT INTO REVIEWS VALUES(REVIEWS_SEQ.NEXTVAL, 167, 'USER9', '꽤나 비싸게 샀다고 생각하는데.. 배송 늦는 건 말할것도 없고 옷도 한가운데가 찢어져서 왔어요', 'null', SYSDATE, 1);
+INSERT INTO REVIEWS VALUES(REVIEWS_SEQ.NEXTVAL, 168, 'USER4', '이 가격에 이 옷을 사다니! 너무 좋아요! 옷감, 가격, 핏 모두 만족해요. 배송도 빨랐어요!', 'review4.jpg', SYSDATE, 5);
+INSERT INTO REVIEWS VALUES(REVIEWS_SEQ.NEXTVAL, 168, 'USER3', '꽤나 비싸게 샀다고 생각하는데.. 배송 늦는 건 말할것도 없고 옷도 한가운데가 찢어져서 왔어요', 'null', SYSDATE, 1);
+INSERT INTO REVIEWS VALUES(REVIEWS_SEQ.NEXTVAL, 169, 'USER8', '꽤나 비싸게 샀다고 생각하는데.. 배송 늦는 건 말할것도 없고 옷도 한가운데가 찢어져서 왔어요', 'null', SYSDATE, 1);
+INSERT INTO REVIEWS VALUES(REVIEWS_SEQ.NEXTVAL, 169, 'USER10', '이 가격에 이 옷을 ��다니! 너무 좋아요! 옷감, 가격, 핏 모두 만족해요. 배송도 빨랐어요!', 'review4.jpg', SYSDATE, 5);
+INSERT INTO REVIEWS VALUES(REVIEWS_SEQ.NEXTVAL, 170, 'USER1', '이 가격을 주고 살만한 제품은 아니라 생각해요... 너무 비쌈', 'review1.jpg', SYSDATE, 2);
+INSERT INTO REVIEWS VALUES(REVIEWS_SEQ.NEXTVAL, 170, 'USER3', '상당히 괜찮은 제품입니다. 다만 실제 색감이 사진과 달라요', 'review3.jpg', SYSDATE, 4);
+
 
 COMMIT

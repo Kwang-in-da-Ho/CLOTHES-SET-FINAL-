@@ -77,8 +77,8 @@ public class BoardController {
 		String path = "board/";		
 		
 		switch( bClass ) {
-		case 0: path += "noticeBoardListPage"; break;
-		case 1: path += "qnaBoardListPage"; break;
+		case 0: 
+		case 1: path += "boardListPage"; break;
 		case 2: path += "faqBoardListPage"; break;
 		}
 				
