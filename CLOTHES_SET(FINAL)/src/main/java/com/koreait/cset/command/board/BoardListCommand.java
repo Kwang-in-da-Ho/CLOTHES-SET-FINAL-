@@ -24,7 +24,7 @@ public class BoardListCommand implements CsetCommand {
 		BoardDAO bDAO = sqlSession.getMapper(BoardDAO.class);		
 		
 		// 1. 게시판 옵션(bClass) 가져오기
-		//   전달된 bClass값이 없을 경우 default를 1로 설정 (QNA 게시판으로 ㄱㄱ)
+		//   전달된 bClass값이 없을 경우 default를 1로 설정 (QNA 게시판을 디폴트로 설정)
 		String bClassStr = request.getParameter( "bClass" );
 		
 		if( bClassStr == null || bClassStr.isEmpty()) {
@@ -47,8 +47,7 @@ public class BoardListCommand implements CsetCommand {
 		int endRecord = beginRecord + recordPerPage - 1;
 		
 		// 4. 전체 게시글 수
-		int totalRecord = bDAO.boardTotalRecords( bClass );
-		
+		int totalRecord = bDAO.boardTotalRecords( bClass );		
 		
 		// 5. 페이지 생성
 		String pageView = BoardPageMaker.getPageView( "boardListPage", page, recordPerPage, totalRecord, bClass );

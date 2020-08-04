@@ -109,7 +109,64 @@
 							</tr>	
 						</c:if>
 						<c:if test="${not empty cjList }">
+						
 							<c:forEach var="cJVO" items="${cjList }" varStatus="status">
+								<script type="text/javascript">
+								
+									$(document).ready(function(){
+										var i = '${status.index }';	
+										
+										// 할인 전 가격
+										var beforeoPrice = parseInt('${cJVO.pPrice * cJVO.cAmount * (1-(cJVO.pDisrate/100))}');
+										beforeoPrice = Math.round( beforeoPrice / 100 ) * 100;
+										$('#oPrice'+i + ' > del').text(beforeoPrice.toLocaleString());
+										
+										// 할인 전 가격 총합
+										total_price += beforeoPrice;
+										$('#total_price + span').text(total_price.toLocaleString());																			
+										
+										// 할인율
+										$('#disrate'+i).text(disrate*100);
+										
+										// 각 상품의 할인 가격
+										var discounted =  Math.round( (beforeoPrice * disrate) / 100) * 100;
+										// 총 할인 가격
+										total_discounted += discounted;
+										$('#discounted').text(total_discounted.toLocaleString());
+						
+										// 할인된 가격
+										var afteroPrice = Math.round( (beforeoPrice-discounted) / 100 ) * 100;
+										// 할인된 가격의 총합
+										dis_total_price += afteroPrice;
+										// 할인된 가격 총합은 DB에 넘어가서 회원 구매실적에 등록됨
+										$('#total_price').val(dis_total_price);																			
+																		
+										$('#disoPrice'+i).text(afteroPrice.toLocaleString());										
+										$('#disoPrice'+i + ' + input[type="hidden"]').val(afteroPrice);										
+										
+										// 배송비 책정의 기준은 할인된 총 가격
+										var fee = (parseInt( dis_total_price ) >= 100000) ? 0 : 3000										
+										$('#fee').text(fee.toLocaleString());
+										
+										// 배송비 포함, 포인트 차감한 마지막 가격									
+										var final_price = dis_total_price + Number($('#fee').val());
+										$('#final_price').text(final_price.toLocaleString());
+										
+		
+										
+										/* 메모 직접 입력시에만 나타나게 하는 함수 */
+										$("#selectNoteDirect").hide();
+										$("#selectNote").change(function(){
+											// 직접입력 누를 때만 나타남
+											if($("#selectNote").val() == "5") {
+												$("#selectNoteDirect").show();
+											} else {
+												$("#selectNoteDirect").hide();
+											}
+										});
+										
+									});
+								</script>
 								<tr>
 									<td>
 										<div class="product-img small" style="background-image: url('resources/product_photos/${cJVO.pFilename}')">
@@ -144,67 +201,7 @@
 										<span class="productTotalPrice" id="disoPrice${status.index }"></span>
 										<input type="hidden" name="oPrice"/>
 									</td>
-								</tr>
-								<script type="text/javascript">
-								
-									$(document).ready(function(){
-										var i = '${status.index }';	
-										
-										// 할인 전 가격
-										var beforeoPrice = parseInt('${cJVO.pPrice * cJVO.cAmount * (1-(cJVO.pDisrate/100))}');
-										beforeoPrice = Math.round( beforeoPrice / 100 ) * 100;
-										$('#oPrice'+i + ' > del').text(beforeoPrice.toLocaleString());
-										
-										// 할인 전 가격 총합
-										total_price += beforeoPrice;
-										$('#total_price + span').text(total_price.toLocaleString());																			
-										
-										// 할인율
-										$('#disrate'+i).text(disrate*100);
-										
-										// 할인 가격
-										var discounted =  Math.round( (beforeoPrice * disrate) / 100) * 100;
-										// 총 할인 가격
-										total_discounted += discounted;
-										$('#discounted').text(total_discounted.toLocaleString());
-						
-										// 할인된 가격
-										var afteroPrice = Math.round( (beforeoPrice-discounted) / 100 ) * 100;
-										// 할인된 가격의 총합
-										dis_total_price += afteroPrice;
-										// 할인된 가격 총합은 DB에 넘어가서 회원 구매실적에 등록됨
-										$('#total_price').val(dis_total_price);																			
-																		
-										$('#disoPrice'+i).text(afteroPrice.toLocaleString());										
-										$('#disoPrice'+i + ' + input[type="hidden"]').val(afteroPrice);										
-										
-										// 배송비 책정의 기준은 할인된 총 가격
-										if(parseInt( dis_total_price ) >= 100000) {
-											$('#fee').text(0); 
-										} else {
-											$('#fee').text(3000);
-										}
-										
-										// 배송포함, 포인트 차감한 마지막 가격
-									
-										var final_price = dis_total_price + Number($('#fee').val());
-										$('#final_price').text(final_price.toLocaleString());
-										
-		
-										
-										/* 메모 직접 입력시에만 나타나게 하는 함수 */
-										$("#selectNoteDirect").hide();
-										$("#selectNote").change(function(){
-											// 직접입력 누를 때만 나타남
-											if($("#selectNote").val() == "5") {
-												$("#selectNoteDirect").show();
-											} else {
-												$("#selectNoteDirect").hide();
-											}
-										});
-										
-									});
-								</script>
+								</tr>								
 							</c:forEach>
 						</c:if>
 					</tbody>					

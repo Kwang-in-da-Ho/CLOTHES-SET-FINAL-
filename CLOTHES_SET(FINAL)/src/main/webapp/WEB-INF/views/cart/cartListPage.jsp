@@ -154,7 +154,85 @@ function fn_cartAmountChange( i, newAmount, productPrice, operator ) {
 								</tr>
 							</thead>
 							<tbody>
+							
 								<c:forEach var="cJVO" items="${list }" varStatus="status">
+									<script type="text/javascript">
+										$(document).ready(function(){
+											var i = '${cJVO.cNo }'; // 각 장바구니 항목의 식별자
+											var productPrice = parseInt('${cJVO.productPrice }'); // 할인율 적용된 상품 가격
+											var sAmount = parseInt('${cJVO.sAmount}'); // 각 장바구니 항목의 재고량
+											var cAmount = parseInt($('#cAmount'+i).val()); // 장바구니에 담긴 수량
+											var productTotalPrice = productPrice * cAmount; // 장바구니 항목의 총 가격 (상품가격 * 담은 수량)											
+																						
+											/** 장바구니 수량 더하기 **/
+											$('#plusBtn'+i).click( function(){
+												
+												// 재고보다 작거나 같은 숫자만 가능
+												if($('#cAmount'+i).val() >= sAmount) {
+													alert('현재 재고(' + sAmount + ')보다 많은 수를 입력할 수 없습니다');
+													return;
+												}
+												
+												$.ajax({
+													url: 'cartPlusCalc'
+													, type: "get"
+													, dataType: "JSON"
+													, data: { 
+														cAmount : $('#cAmount'+i).val()
+														, cNo : '${cJVO.cNo}'
+														}
+													, success: function( responseObj ) {
+														// AJAX 통신으로 변경된 수량을 받는다
+														var newAmount = responseObj.result
+														fn_cartAmountChange( i, newAmount, productPrice, "add" );
+													}
+												}); // ajax end
+											});	// click event handler end
+											
+											/** 장바구니 수량 빼기 **/
+											$('#minusBtn'+i).click( function(){
+												if($('#cAmount'+i).val() <= 1) {
+													alert('1보다 작은 수는 넣을 수 없습니다.');
+													return;
+												}
+												$.ajax({
+													url: 'cartMinusCalc'
+													, type: "get"
+													, dataType: "JSON"
+													, data: { 
+														cAmount : $('#cAmount'+i).val()
+														, cNo : '${cJVO.cNo}'
+														}
+													, success: function( responseObj ) {
+														var newAmount = responseObj.result
+														fn_cartAmountChange( i, newAmount, productPrice, "subtract" );
+													}
+												}); // ajax end
+											}); // click event handler end
+											
+											
+											var sumMoney = parseInt('${sumMoney}');	 // 전체 상품 가격
+											var totalPrice = parseInt('${total}');   // 배송비를 포함한 전체 가격'
+											
+											$('#sumMoney').text( sumMoney.toLocaleString() );
+											$('#totalPrice').val( totalPrice );
+											$('#totalPrice + span').text( totalPrice.toLocaleString() );
+											
+											// 장바구니 항목 하나의 총 상품 금액 (상품 가격 * 장바구니 수량)
+											$('#cPrice'+i).text( productTotalPrice.toLocaleString() );				
+											
+											// 전체선택 해제여부
+											$("#chk").click(function() {
+												if($("input[name='chk']:checked").length == ${status.index + 1}){
+													$("#chk_all").prop("checked", true);
+												} else {
+													$("#chk_all").prop("checked", false);
+												}
+											});
+											
+										}); // load event handler end
+												
+									</script>
 									<!-- 수량 변경 -->
 										<tr>
 											<td>
@@ -186,81 +264,7 @@ function fn_cartAmountChange( i, newAmount, productPrice, operator ) {
 												<input type="button" value="바로주문" onclick="location.href='cOrderQuick?cNo=${cJVO.cNo}'" /> <!-- 바로 주문 버튼 -->
 											</td>
 										</tr>
-										<script type="text/javascript">
-											$(document).ready(function(){
-												var i = '${cJVO.cNo }'; // 각 장바구니 항목의 식별자
-												var productPrice = parseInt('${cJVO.productPrice }'); // 할인율 적용된 상품 가격
-												var sAmount = parseInt('${cJVO.sAmount}'); // 각 장바구니 항목의 재고량
-												var cAmount = parseInt($('#cAmount'+i).val());
-												var productTotalPrice = productPrice * cAmount;
-												var sumMoney = parseInt('${sumMoney}');	 // 전체 상품 가격
-												var totalPrice = parseInt('${total}');   // 배송비를 포함한 전체 가격
-												
-												
-												$('#sumMoney').text( sumMoney.toLocaleString() );
-												$('#totalPrice').val( totalPrice );
-												$('#totalPrice + span').text( totalPrice.toLocaleString() );
-												
-												// 장바구니 항목 하나의 총 상품 금액 (상품 가격 * 장바구니 수량)
-												$('#cPrice'+i).text( productTotalPrice.toLocaleString() );
-
-												// 전체선택 해제여부
-												$("#chk").click(function() {
-													if($("input[name='chk']:checked").length == ${status.index + 1}){
-														$("#chk_all").prop("checked", true);
-													} else {
-														$("#chk_all").prop("checked", false);
-													}
-												});
-												
-												/** 장바구니 수량 더하기 **/
-												$('#plusBtn'+i).click( function(){
-													
-													// 재고보다 작거나 같은 숫자만 가능
-													if($('#cAmount'+i).val() >= sAmount) {
-														alert('현재 재고(' + sAmount + ')보다 많은 수를 입력할 수 없습니다');
-														return;
-													}
-													
-													$.ajax({
-														url: 'cartPlusCalc'
-														, type: "get"
-														, dataType: "JSON"
-														, data: { 
-															cAmount : $('#cAmount'+i).val()
-															, cNo : '${cJVO.cNo}'
-															}
-														, success: function( responseObj ) {
-															// AJAX 통신으로 변경된 수량을 받는다
-															var newAmount = responseObj.result
-															fn_cartAmountChange( i, newAmount, productPrice, "add" );
-														}
-													});
-												});	
-												
-												/** 장바구니 수량 빼기 **/
-												$('#minusBtn'+i).click( function(){
-													if($('#cAmount'+i).val() <= 1) {
-														alert('1보다 작은 수는 넣을 수 없습니다.');
-														return;
-													}
-													$.ajax({
-														url: 'cartMinusCalc'
-														, type: "get"
-														, dataType: "JSON"
-														, data: { 
-															cAmount : $('#cAmount'+i).val()
-															, cNo : '${cJVO.cNo}'
-															}
-														, success: function( responseObj ) {
-															var newAmount = responseObj.result
-															fn_cartAmountChange( i, newAmount, productPrice, "subtract" );
-														}
-													});
-												});
-											});
-											
-										</script>
+										
 								</c:forEach>
 							</tbody>
 						</table>

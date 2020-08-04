@@ -13,20 +13,19 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 				FROM BOARD
 				WHERE BCLASS = #{param1}
 				ORDER BY BREF DESC, BDEPTH ASC, BSTEP DESC) A )
-		WHERE RN BETWEEN #{param2} AND #{param3}
-		
+		WHERE RN BETWEEN #{param2} AND #{param3}		
 	</select>
 	
 	<!-- 1-1. FAQ 목록 가져오기 -->
 	<!-- FAQ 목록은 QNA 게시글 중 조회수 TOP 10 -->
 	<select id="faqSelectList" resultType="com.koreait.cset.dto.BoardDTO">
 		SELECT *
-		FROM (SELECT ROWNUM AS RN, A.*
+		FROM (SELECT ROWNUM, A.*
 			FROM (SELECT *
 				FROM BOARD
 				WHERE BCLASS = 1 AND BDEPTH = 0
 				ORDER BY BHIT DESC) A)
-		WHERE RN BETWEEN 1 AND 10
+		WHERE ROWNUM &lt;= 10
 	</select>
 	
 	<!-- 2. 게시글 전체 개수 조회 -->
